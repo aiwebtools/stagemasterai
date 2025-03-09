@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -168,6 +169,29 @@
 
   .star-field {
     @apply absolute inset-0 overflow-hidden pointer-events-none;
+  }
+
+  /* 3D Floating Letters */
+  .floating-letters-container {
+    @apply relative overflow-hidden;
+  }
+
+  .floating-letter {
+    @apply absolute inline-block font-medium tracking-wide;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.7), 0 0 10px rgba(255, 215, 0, 0.5);
+    transform-style: preserve-3d;
+    animation: floatLetter 3s ease-in-out infinite;
+  }
+
+  @keyframes floatLetter {
+    0%, 100% {
+      transform: translateZ(0) translateY(0);
+      text-shadow: 0 0 5px rgba(255, 215, 0, 0.7), 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+    50% {
+      transform: translateZ(15px) translateY(-5px);
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 0 0 20px rgba(255, 215, 0, 0.7);
+    }
   }
 
   @keyframes twinkle {
