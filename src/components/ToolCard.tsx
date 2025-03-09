@@ -44,10 +44,12 @@ const ToolCard = ({ title, description, icon, color, href, features }: ToolCardP
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
-          "inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full transition-all",
-          "hover:opacity-90 active:scale-95",
-          color
+          "inline-flex items-center justify-center gap-2 text-sm font-medium px-4 py-2 rounded-full transition-all",
+          "hover:opacity-90 active:scale-95 w-full md:w-auto",
+          color,
+          "shadow-sm hover:shadow-md"
         )}
+        onClick={(e) => e.currentTarget.blur()}
       >
         Try This Tool <ExternalLink size={14} />
       </a>

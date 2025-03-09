@@ -9,6 +9,7 @@ const Footer = () => {
     { name: 'Choreography GPT', href: 'https://chatgpt.com/g/g-67cde6205164819189f48fefadc02991-choreography-gpt' },
     { name: 'Stage Lighting GPT', href: 'https://chatgpt.com/g/g-67cde71b4f208191836a7db7efb9f1d2-stage-lighting-gpt' },
     { name: 'Playwriter GPT', href: 'https://playwritergpt.lovable.app/' },
+    { name: 'Movie Script Writer GPT', href: 'https://moviescriptwritergpt.lovable.app/' },
     { name: 'FAQ', href: '#faq' },
     { name: 'Disclaimer', href: '#disclaimer' },
   ];
@@ -58,7 +59,7 @@ const Footer = () => {
             <div>
               <h3 className="text-white font-semibold mb-4">Our Tools</h3>
               <ul className="space-y-2">
-                {navigationLinks.slice(0, 5).map((link, index) => (
+                {navigationLinks.slice(0, 6).map((link, index) => (
                   <li key={index}>
                     <a 
                       href={link.href} 
@@ -74,7 +75,7 @@ const Footer = () => {
             <div>
               <h3 className="text-white font-semibold mb-4">Resources</h3>
               <ul className="space-y-2">
-                {navigationLinks.slice(5).map((link, index) => (
+                {navigationLinks.slice(6).map((link, index) => (
                   <li key={index}>
                     <a 
                       href={link.href} 
