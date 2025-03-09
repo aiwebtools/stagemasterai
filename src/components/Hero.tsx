@@ -1,6 +1,5 @@
-
 import React, { useEffect, useRef } from 'react';
-import { ArrowRight, PenTool, ExternalLink } from 'lucide-react';
+import { ArrowRight, PenTool, ExternalLink, Film } from 'lucide-react';
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
