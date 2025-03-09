@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ToolCard from '@/components/ToolCard';
-import { Palette, Music, Theater, LampDesk, PenTool } from 'lucide-react';
+import { Palette, Music, Theater, LampDesk, PenTool, Film } from 'lucide-react';
 
 const ToolsSection = () => {
   const tools = [
@@ -73,6 +73,20 @@ const ToolsSection = () => {
         "Act and scene structuring",
         "Dialogue generation",
         "Printable script formatting"
+      ]
+    },
+    {
+      title: "Movie Script Writer GPT",
+      description: "Create complete movie scripts with engaging storylines, character arcs, and industry-standard formatting.",
+      icon: <Film className="text-stage-dark" size={32} />,
+      color: "bg-blue-gradient text-stage-dark",
+      href: "https://moviescriptwritergpt.lovable.app/",
+      features: [
+        "Genre-specific storytelling techniques",
+        "Character backstory development",
+        "Scene-by-scene structure guidance",
+        "Dialogue enhancement",
+        "Industry-standard script formatting"
       ]
     }
   ];
