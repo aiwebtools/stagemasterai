@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
@@ -14,6 +13,17 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
 
   const navigationLinks = [
     { name: 'Theater Set Design GPT', href: 'https://chatgpt.com/g/g-67cde1ee39748191b7b3721323131801-theater-set-design-gpt' },
@@ -43,12 +53,11 @@ const Header = () => {
               StageMaster AI Suite
             </h1>
             <div className="text-xs text-white/70">
-              Presented by <a href="https://www.aiwebtools.ai" className="hover:text-white">AiWebTools.Ai</a>
+              Presented by <span className="hover:text-white">AiWebTools.Ai</span>
             </div>
           </div>
         </a>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           {navigationLinks.map((link, index) => (
             <a
@@ -62,28 +71,37 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Mobile Menu Toggle */}
         <button 
           className="md:hidden p-2 text-white/80 hover:text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Navigation */}
       <div 
         className={cn(
-          "fixed inset-0 z-40 bg-stage-dark/95 frost-blur pt-20 transform transition-transform duration-300 ease-in-out md:hidden",
+          "fixed inset-0 z-40 bg-stage-dark pt-20 transform transition-transform duration-300 ease-in-out md:hidden",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <nav className="flex flex-col items-center gap-6 p-4">
+        <div className="absolute top-4 right-4 z-50">
+          <button 
+            className="p-2 text-white/80 hover:text-white rounded-full bg-white/10"
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <X size={24} />
+          </button>
+        </div>
+        
+        <nav className="flex flex-col items-start gap-4 p-6 overflow-y-auto max-h-[calc(100vh-5rem)]">
           {navigationLinks.map((link, index) => (
             <a
               key={index}
               href={link.href}
-              className="text-lg text-white/80 hover:text-white transition-colors py-2"
+              className="text-lg text-white/80 hover:text-white transition-colors py-2 w-full border-b border-white/10"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
