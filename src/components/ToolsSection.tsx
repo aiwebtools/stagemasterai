@@ -120,14 +120,13 @@ const ToolsSection = () => {
       <div className="container px-4 mx-auto">
         <div className="text-center mb-12">
           <span className="px-3 py-1 text-xs font-medium rounded-full bg-white/10 text-white backdrop-blur-sm mb-4 inline-block">
-            Our AI Suite
+            Complete AI Creative Suite
           </span>
           <h2 className="headline text-3xl md:text-4xl mb-4">
-            Specialized AI Tools for Every Stage Need
+            Specialized AI Tools for Every Creative Need
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            Each tool in the StageMaster AI Suite is designed to address specific aspects of theater production,
-            providing professional-level assistance for your creative process.
+            Each tool in the StageMaster AI Suite is designed to enhance your creative process - from set design and lighting to scriptwriting and choreography.
           </p>
         </div>
         

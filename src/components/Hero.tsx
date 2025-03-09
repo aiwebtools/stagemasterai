@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, PenTool, ExternalLink } from 'lucide-react';
 
@@ -102,17 +103,16 @@ const Hero = () => {
         <div className="flex flex-col items-center text-center">
           <div className="inline-block mb-4">
             <span className="px-3 py-1 text-xs font-medium rounded-full bg-white/10 text-white backdrop-blur-sm">
-              Professional AI Tools for Theater Production
+              Complete AI Creative Suite for Stage & Screen
             </span>
           </div>
           
           <h1 className="headline text-4xl md:text-6xl lg:text-7xl mb-6 max-w-4xl leading-tight">
-            <span className="text-gold-gradient">Revolutionize</span> Your Theater Production with <span className="text-gold-gradient">AI</span>
+            <span className="text-gold-gradient">Transform</span> Your Creative Vision with <span className="text-gold-gradient">AI</span>
           </h1>
           
           <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed">
-            A powerful suite of AI tools that transforms every aspect of stage production, 
-            from set design to choreography, costume creation to lighting optimization.
+            A comprehensive suite of AI tools for the entire creative process - from scriptwriting and set design to costumes, choreography, and lighting.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -120,7 +120,7 @@ const Hero = () => {
               href="#tools" 
               className="interactive-button bg-gold-gradient"
             >
-              <span className="text-stage-dark font-semibold">Discover AI Tools for Every Stage</span>
+              <span className="text-stage-dark font-semibold">Explore All Creative AI Tools</span>
             </a>
             <a 
               href="#how-it-works" 
@@ -133,7 +133,7 @@ const Hero = () => {
           </div>
           
           <div className="glass-card p-6 max-w-4xl shadow-2xl">
-            <div className="flex justify-center">
+            <div className="flex flex-wrap justify-center gap-4">
               <a 
                 href="https://playwritergpt.lovable.app/"
                 target="_blank" 
@@ -141,7 +141,17 @@ const Hero = () => {
                 className="interactive-button bg-gold-gradient"
               >
                 <span className="text-stage-dark flex items-center gap-2 font-semibold">
-                  <PenTool size={18} /> TRY PLAYWRITER GPT NOW <ExternalLink size={16} />
+                  <PenTool size={18} /> Try PlayWriter GPT <ExternalLink size={16} />
+                </span>
+              </a>
+              <a 
+                href="https://moviescriptwritergpt.lovable.app/"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="interactive-button bg-green-gradient"
+              >
+                <span className="text-stage-dark flex items-center gap-2 font-semibold">
+                  <Film size={18} className="text-stage-dark" /> Try Movie Script Writer <ExternalLink size={16} />
                 </span>
               </a>
             </div>
