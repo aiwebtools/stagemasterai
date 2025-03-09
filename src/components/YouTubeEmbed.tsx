@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Play } from 'lucide-react';
 
 interface YouTubeEmbedProps {
@@ -9,7 +9,9 @@ interface YouTubeEmbedProps {
 
 const YouTubeEmbed = ({ videoId, title = "YouTube video" }: YouTubeEmbedProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
+  
+  // Auto-play the video by default
+  const [isPlaying, setIsPlaying] = useState(true);
 
   const handleIframeLoad = () => {
     setIsLoaded(true);
@@ -41,7 +43,7 @@ const YouTubeEmbed = ({ videoId, title = "YouTube video" }: YouTubeEmbedProps) =
           <iframe 
             width="100%" 
             height="100%" 
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&si=vcFnAVMd36Avmpv4`}
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&si=vcFnAVMd36Avmpv4&hd=1&vq=hd1080`}
             title={title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowFullScreen

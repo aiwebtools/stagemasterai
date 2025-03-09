@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
+import YouTubeEmbed from './YouTubeEmbed';
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -134,17 +135,7 @@ const Hero = () => {
           </div>
           
           <div className="glass-card p-6 max-w-4xl shadow-2xl">
-            <div className="relative w-full aspect-video rounded-lg overflow-hidden">
-              <iframe 
-                width="100%" 
-                height="100%" 
-                src="https://www.youtube.com/embed/KKldzg40wEI?si=vcFnAVMd36Avmpv4" 
-                title="StageMaster AI Suite Demo" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
-                className="absolute inset-0"
-              ></iframe>
-            </div>
+            <YouTubeEmbed videoId="KKldzg40wEI" title="StageMaster AI Suite Demo" />
           </div>
         </div>
       </div>
