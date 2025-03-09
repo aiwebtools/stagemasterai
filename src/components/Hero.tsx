@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, PenTool, ExternalLink } from 'lucide-react';
 
@@ -121,7 +120,7 @@ const Hero = () => {
               href="#tools" 
               className="interactive-button bg-gold-gradient"
             >
-              <span className="text-stage-dark font-semibold">Specialized AI Tools for Every Stage Select Your Tool</span>
+              <span className="text-stage-dark font-semibold">Discover AI Tools for Every Stage</span>
             </a>
             <a 
               href="#how-it-works" 
