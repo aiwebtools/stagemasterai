@@ -79,7 +79,7 @@ const ToolsSection = () => {
       title: "Movie Script Writer GPT",
       description: "Create complete movie scripts with engaging storylines, character arcs, and industry-standard formatting.",
       icon: <Film className="text-stage-dark" size={32} />,
-      color: "bg-blue-gradient text-stage-dark",
+      color: "bg-green-gradient text-stage-dark",
       href: "https://moviescriptwritergpt.lovable.app/",
       features: [
         "Genre-specific storytelling techniques",
