@@ -1,7 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, PenTool, ExternalLink } from 'lucide-react';
-import YouTubeEmbed from './YouTubeEmbed';
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -135,22 +134,7 @@ const Hero = () => {
           </div>
           
           <div className="glass-card p-6 max-w-4xl shadow-2xl">
-            <YouTubeEmbed videoId="KKldzg40wEI" title="StageMaster AI Suite Demo" />
-            
-            <div className="mt-6 flex justify-center">
-              <a 
-                href="https://playwritergpt.lovable.app/"
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="interactive-button bg-purple-gradient"
-              >
-                <span className="text-white flex items-center gap-2 font-semibold">
-                  <PenTool size={18} /> TRY PLAYWRITER GPT
-                </span>
-              </a>
-            </div>
-            
-            <div className="mt-4 flex justify-center">
+            <div className="flex justify-center">
               <a 
                 href="https://playwritergpt.lovable.app/"
                 target="_blank" 

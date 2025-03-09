@@ -8,7 +8,7 @@ import TestimonialCard from '@/components/TestimonialCard';
 import FAQSection from '@/components/FAQSection';
 import DisclaimerSection from '@/components/DisclaimerSection';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
-import { Palette, Music, Theater, LampDesk, PenTool } from 'lucide-react';
+import { Palette, Music, Theater, LampDesk, PenTool, ExternalLink } from 'lucide-react';
 
 const Index = () => {
   useEffect(() => {
@@ -231,6 +231,19 @@ const Index = () => {
             
             <div className="max-w-4xl mx-auto">
               <YouTubeEmbed videoId="KKldzg40wEI" title="StageMaster AI Suite Demo" />
+              
+              <div className="mt-6 flex justify-center">
+                <a 
+                  href="https://playwritergpt.lovable.app/"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="interactive-button bg-gold-gradient"
+                >
+                  <span className="text-stage-dark flex items-center gap-2 font-semibold">
+                    <PenTool size={18} /> TRY PLAYWRITER GPT NOW <ExternalLink size={16} />
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </section>
