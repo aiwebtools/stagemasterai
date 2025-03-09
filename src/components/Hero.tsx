@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, PenTool, ExternalLink, Film } from 'lucide-react';
 
@@ -63,6 +64,15 @@ const Hero = () => {
     >
       <div ref={starsRef} className="star-field"></div>
       <div ref={spotlightRef} className="spotlight"></div>
+      
+      {/* Featured Image */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-30 z-0">
+        <img 
+          src="https://img1.wsimg.com/isteam/ip/9fd6d942-5b46-4025-92e2-0f1ec2a7adf2/an-advertisement-for-the-ai-tool-stagema_oEHt8.png/:/cr=t:5.43%25,l:0%25,w:100%25,h:89.13%25/rs=w:1200,h:600,cg:true" 
+          alt="StageMaster AI Suite" 
+          className="object-cover w-full h-full opacity-40 blur-sm"
+        />
+      </div>
       
       {/* Floating glow elements */}
       <div 
