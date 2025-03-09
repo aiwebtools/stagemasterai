@@ -21,7 +21,7 @@ const Header = () => {
     { name: 'Choreography GPT', href: 'https://chatgpt.com/g/g-67cde6205164819189f48fefadc02991-choreography-gpt' },
     { name: 'Stage Lighting GPT', href: 'https://chatgpt.com/g/g-67cde71b4f208191836a7db7efb9f1d2-stage-lighting-gpt' },
     { name: 'Playwriter GPT', href: 'https://playwritergpt.lovable.app/' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'Movie Script Writer GPT', href: 'https://moviescriptwritergpt.lovable.app/' },
     { name: 'Disclaimer', href: '#disclaimer' },
     { name: 'More AI Tools', href: 'https://www.aiwebtools.ai' },
   ];
