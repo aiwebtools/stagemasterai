@@ -121,7 +121,7 @@ const Hero = () => {
               href="#tools" 
               className="interactive-button bg-gold-gradient"
             >
-              <span className="text-stage-dark font-semibold">Explore AI Tools</span>
+              <span className="text-stage-dark font-semibold">Specialized AI Tools for Every Stage Select Your Tool</span>
             </a>
             <a 
               href="#how-it-works" 
