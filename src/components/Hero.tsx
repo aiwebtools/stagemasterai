@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, PenTool, ExternalLink, Film } from 'lucide-react';
 
@@ -6,7 +5,6 @@ const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const starsRef = useRef<HTMLDivElement>(null);
   const spotlightRef = useRef<HTMLDivElement>(null);
-  const letters = "A comprehensive suite of AI tools for the entire creative process - from scriptwriting and set design to costumes, choreography, and lighting.".split("");
 
   // Generate stars
   useEffect(() => {
@@ -112,21 +110,9 @@ const Hero = () => {
             <span className="text-gold-gradient">Transform</span> Your Creative Vision with <span className="text-gold-gradient">AI</span>
           </h1>
           
-          <div className="floating-letters-container max-w-2xl mb-10 relative h-24 md:h-20">
-            {letters.map((letter, index) => (
-              <span 
-                key={index}
-                className="floating-letter text-yellow-300 text-lg md:text-xl"
-                style={{
-                  animationDelay: `${index * 0.05}s`,
-                  left: `${((index % 50) / 50) * 100}%`,
-                  top: index >= 50 ? '50%' : '0%'
-                }}
-              >
-                {letter}
-              </span>
-            ))}
-          </div>
+          <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed">
+            A comprehensive suite of AI tools for the entire creative process - from scriptwriting and set design to costumes, choreography, and lighting.
+          </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <a 
