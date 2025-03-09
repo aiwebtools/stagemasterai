@@ -1,5 +1,6 @@
+
 import React, { useEffect, useRef } from 'react';
-import { ArrowRight, PenTool } from 'lucide-react';
+import { ArrowRight, PenTool, ExternalLink } from 'lucide-react';
 import YouTubeEmbed from './YouTubeEmbed';
 
 const Hero = () => {
@@ -145,6 +146,19 @@ const Hero = () => {
               >
                 <span className="text-white flex items-center gap-2 font-semibold">
                   <PenTool size={18} /> TRY PLAYWRITER GPT
+                </span>
+              </a>
+            </div>
+            
+            <div className="mt-4 flex justify-center">
+              <a 
+                href="https://playwritergpt.lovable.app/"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="interactive-button bg-gold-gradient"
+              >
+                <span className="text-stage-dark flex items-center gap-2 font-semibold">
+                  <PenTool size={18} /> TRY PLAYWRITER GPT NOW <ExternalLink size={16} />
                 </span>
               </a>
             </div>
