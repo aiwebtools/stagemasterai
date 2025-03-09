@@ -35,19 +35,19 @@ const Footer = () => {
             <p className="text-white/60 text-sm mb-4">
               Professional AI tools for theater production, designed to enhance set design, costume creation, choreography planning, and lighting design.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex items-center space-x-6 text-white/60 text-sm">
               <a 
                 href="tel:+14758008096" 
-                className="text-white/60 hover:text-white flex items-center gap-2"
+                className="hover:text-white flex items-center gap-2 transition-colors"
               >
-                <Phone size={16} />
+                <Phone size={16} className="text-gold-gradient" />
                 <span>(475) 800-8096</span>
               </a>
               <a 
                 href="mailto:Contact@ai-webtools.com" 
-                className="text-white/60 hover:text-white flex items-center gap-2"
+                className="hover:text-white flex items-center gap-2 transition-colors"
               >
-                <Mail size={16} />
+                <Mail size={16} className="text-gold-gradient" />
                 <span>Contact@ai-webtools.com</span>
               </a>
             </div>
@@ -62,10 +62,10 @@ const Footer = () => {
                   <li key={index}>
                     <a 
                       href={link.href} 
-                      className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1"
+                      className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                     >
                       {link.name}
-                      <ExternalLink size={12} />
+                      <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </li>
                 ))}
@@ -87,19 +87,19 @@ const Footer = () => {
                 <li>
                   <a 
                     href="https://openai.com/policies/privacy-policy/" 
-                    className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1"
+                    className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
                     Privacy Policy
-                    <ExternalLink size={12} />
+                    <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                 </li>
                 <li>
                   <a 
                     href="https://aiwebtools.ai/terms-of-services" 
-                    className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1"
+                    className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
                     Terms of Service
-                    <ExternalLink size={12} />
+                    <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                 </li>
               </ul>
@@ -114,9 +114,10 @@ const Footer = () => {
           </p>
           <a 
             href="https://www.aiwebtools.ai"
-            className="rounded-full py-2 px-6 bg-white/10 hover:bg-white/20 transition-colors text-white text-sm"
+            className="rounded-full py-2 px-6 bg-white/10 hover:bg-white/20 transition-colors text-white text-sm flex items-center gap-2 hover:shadow-lg hover:shadow-white/5"
           >
             Discover More AI Tools
+            <ExternalLink size={14} />
           </a>
         </div>
       </div>
