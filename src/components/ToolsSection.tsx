@@ -77,16 +77,16 @@ const ToolsSection = () => {
     },
     {
       title: "Movie Script Writer GPT",
-      description: "Create complete movie scripts with engaging storylines, character arcs, and industry-standard formatting.",
+      description: "The most sophisticated AI screenwriting assistant that guides you through every step of the script creation process, from concept to final draft.",
       icon: <Film className="text-stage-dark" size={32} />,
       color: "bg-green-gradient text-stage-dark",
       href: "https://moviescriptwritergpt.lovable.app/",
       features: [
-        "Genre-specific storytelling techniques",
-        "Character backstory development",
-        "Scene-by-scene structure guidance",
-        "Dialogue enhancement",
-        "Industry-standard script formatting"
+        "Complete script creation with industry-standard formatting",
+        "Detailed scene planning and character development",
+        "Step-by-step guided writing process",
+        "Multi-genre support (Action, Drama, Comedy)",
+        "Export scripts to Word for editing and sharing"
       ]
     }
   ];
