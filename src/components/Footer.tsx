@@ -28,12 +28,12 @@ const Footer = () => {
                   StageMaster AI Suite
                 </h1>
                 <div className="text-xs text-white/70">
-                  Presented by <a href="https://www.aiwebtools.ai" className="hover:text-white">AiWebTools.Ai</a>
+                  By <a href="https://www.aiwebtools.ai" className="hover:text-white">AiWebTools.Ai</a>
                 </div>
               </div>
             </a>
             <p className="text-white/60 text-sm mb-4">
-              Advanced AI tools for theater production, designed to streamline set design, costume creation, choreography, and lighting optimization.
+              Professional AI tools for theater production, designed to enhance set design, costume creation, choreography planning, and lighting design.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -56,7 +56,7 @@ const Footer = () => {
           {/* Navigation Links */}
           <div className="grid grid-cols-2 md:grid-cols-2 gap-6">
             <div>
-              <h3 className="text-white font-semibold mb-4">AI Tools</h3>
+              <h3 className="text-white font-semibold mb-4">Our Tools</h3>
               <ul className="space-y-2">
                 {navigationLinks.slice(0, 5).map((link, index) => (
                   <li key={index}>
@@ -72,7 +72,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-white font-semibold mb-4">Information</h3>
+              <h3 className="text-white font-semibold mb-4">Resources</h3>
               <ul className="space-y-2">
                 {navigationLinks.slice(5).map((link, index) => (
                   <li key={index}>
@@ -110,13 +110,13 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between">
           <p className="text-white/60 text-sm mb-4 md:mb-0">
-            © 2025 <a href="https://www.aiwebtools.ai" className="hover:text-white">AI WEB TOOLS LLC</a> All rights reserved.
+            © 2025 <a href="https://www.aiwebtools.ai" className="hover:text-white">AI WEB TOOLS LLC</a>. All rights reserved.
           </p>
           <a 
             href="https://www.aiwebtools.ai"
             className="rounded-full py-2 px-6 bg-white/10 hover:bg-white/20 transition-colors text-white text-sm"
           >
-            More AI Tools
+            Discover More AI Tools
           </a>
         </div>
       </div>
