@@ -1,7 +1,23 @@
 
 import React from 'react';
+import { Button } from "@/components/ui/button";
+import { toast } from '@/hooks/use-toast';
 
 const DisclaimerSection = () => {
+  const handleReviewDisclaimer = () => {
+    // Remove the acceptance from localStorage so the popup will show again
+    localStorage.removeItem('disclaimerAccepted');
+    
+    // Refresh the page to trigger the disclaimer popup
+    window.location.reload();
+    
+    toast({
+      title: "Disclaimer Reset",
+      description: "The disclaimer will appear when the page refreshes.",
+      duration: 3000,
+    });
+  };
+
   return (
     <section id="disclaimer" className="py-16 bg-black/30">
       <div className="container px-4 mx-auto">
@@ -28,6 +44,15 @@ const DisclaimerSection = () => {
             <p>By using the StageMaster AI Suite tools, you acknowledge that you have read, understood, and agree to be bound by this disclaimer. This disclaimer may be updated from time to time without notice.</p>
             
             <p className="text-xs text-white/50 mt-6">Last updated: June 2025</p>
+            
+            <div className="flex justify-center mt-8">
+              <Button 
+                onClick={handleReviewDisclaimer}
+                className="bg-white/10 hover:bg-white/20 text-white"
+              >
+                Review Full Disclaimer Again
+              </Button>
+            </div>
           </div>
         </div>
       </div>
