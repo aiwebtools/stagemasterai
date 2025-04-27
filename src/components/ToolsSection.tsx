@@ -1,7 +1,6 @@
-
 import React from 'react';
 import ToolCard from '@/components/ToolCard';
-import { Palette, Music, Theater, LampDesk, PenTool, Film } from 'lucide-react';
+import { Palette, Music, Theater, LampDesk, PenTool, Film, Video } from 'lucide-react';
 
 const ToolsSection = () => {
   const tools = [
@@ -87,6 +86,20 @@ const ToolsSection = () => {
         "Step-by-step guided writing process",
         "Multi-genre support (Action, Drama, Comedy)",
         "Export scripts to Word for editing and sharing"
+      ]
+    },
+    {
+      title: "Movie Scene Maker GPT",
+      description: "Create detailed scene breakdowns, shot lists, and technical specifications for movie scenes with AI assistance.",
+      icon: <Video className="text-stage-dark" size={32} />,
+      color: "bg-teal-gradient text-stage-dark",
+      href: "https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt",
+      features: [
+        "Scene-by-scene breakdowns",
+        "Camera shot specifications",
+        "Lighting and audio requirements",
+        "Location scouting guidance",
+        "Props and equipment lists"
       ]
     }
   ];
