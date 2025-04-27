@@ -62,7 +62,7 @@ const Footer = () => {
             <div>
               <h3 className="text-white font-semibold mb-4">Our Tools</h3>
               <ul className="space-y-2">
-                {navigationLinks.slice(0, 7).map((link, index) => (
+                {navigationLinks.map((link, index) => (
                   <li key={index}>
                     <a 
                       href={link.href} 
@@ -73,6 +73,15 @@ const Footer = () => {
                     </a>
                   </li>
                 ))}
+                <li>
+                  <a 
+                    href="https://www.aiwebtools.ai" 
+                    className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1 group"
+                  >
+                    MORE AI TOOLS
+                    <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
