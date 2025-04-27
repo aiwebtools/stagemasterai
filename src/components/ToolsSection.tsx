@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ToolCard from '@/components/ToolCard';
 import { Palette, Music, Theater, LampDesk, PenTool, Film, Video } from 'lucide-react';
@@ -100,7 +99,7 @@ const ToolsSection = () => {
         "Choose from multiple movie genres or create custom stories",
         "Hyper-realistic 4K scene generation with perfect continuity",
         "Scene-by-scene storyboard creation with you as the star",
-        "Download your scenes as storyboard or image collection"
+        "Download your scenes as storyboard or image collection to animate with Sora"
       ]
     }
   ];
