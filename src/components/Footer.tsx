@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ExternalLink, Phone, Mail } from 'lucide-react';
 
@@ -11,6 +10,9 @@ const Footer = () => {
     { name: 'Playwriter GPT', href: 'https://playwritergpt.lovable.app/' },
     { name: 'Movie Script Writer GPT', href: 'https://moviescriptwritergpt.lovable.app/' },
     { name: 'Movie Scene Maker GPT', href: 'https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt' },
+  ];
+
+  const resourceLinks = [
     { name: 'FAQ', href: '#faq' },
     { name: 'Disclaimer', href: '#disclaimer' },
   ];
@@ -60,7 +62,7 @@ const Footer = () => {
             <div>
               <h3 className="text-white font-semibold mb-4">Our Tools</h3>
               <ul className="space-y-2">
-                {navigationLinks.slice(0, 6).map((link, index) => (
+                {navigationLinks.slice(0, 7).map((link, index) => (
                   <li key={index}>
                     <a 
                       href={link.href} 
@@ -76,7 +78,7 @@ const Footer = () => {
             <div>
               <h3 className="text-white font-semibold mb-4">Resources</h3>
               <ul className="space-y-2">
-                {navigationLinks.slice(6).map((link, index) => (
+                {resourceLinks.map((link, index) => (
                   <li key={index}>
                     <a 
                       href={link.href} 
