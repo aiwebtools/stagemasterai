@@ -100,7 +100,7 @@ const ToolsSection = () => {
         "Choose from multiple movie genres or create custom stories",
         "Hyper-realistic 4K scene generation with perfect continuity",
         "Scene-by-scene storyboard creation with you as the star",
-        "Direct integration with Sora for scene animation"
+        "Download your scenes as storyboard or image collection"
       ]
     }
   ];
