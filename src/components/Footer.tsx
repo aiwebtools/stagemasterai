@@ -9,7 +9,7 @@ const Footer = () => {
     { name: 'Stage Lighting GPT', href: 'https://chatgpt.com/g/g-67cde71b4f208191836a7db7efb9f1d2-stage-lighting-gpt' },
     { name: 'Playwriter GPT', href: 'https://playwritergpt.lovable.app/' },
     { name: 'Movie Script Writer GPT', href: 'https://moviescriptwritergpt.lovable.app/' },
-    { name: 'Movie Scene Maker GPT', href: 'https://chatgpt.com/g/g-680ea46ceb708191b9dcb9a4d2983f4f-movie-scene-maker-gpt' },
+    { name: 'Movie Scene Maker GPT', href: 'https://moviescenemakergpt.lovable.app/?via=aiwebtools' },
   ];
 
   const resourceLinks = [
