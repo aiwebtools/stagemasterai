@@ -37,6 +37,7 @@ const Header = () => {
     { name: 'Playwriter GPT', href: 'https://playwritergpt.lovable.app/' },
     { name: 'Movie Script Writer GPT', href: 'https://moviescriptwritergpt.lovable.app/' },
     { name: 'Movie Scene Maker GPT', href: 'https://moviescenemakergpt.lovable.app/?via=aiwebtools' },
+    { name: 'Movie Maker AI Studio', href: 'https://moviemakerstudio.lovable.app/?via=aiwebtools' },
     { name: 'More AI Tools', href: 'https://www.aiwebtools.ai' },
   ];
 
@@ -48,7 +49,11 @@ const Header = () => {
     },
     {
       category: 'Script Writing GPTs',
-      links: navigationLinks.slice(4, 7),
+      links: navigationLinks.slice(4, 6),
+    },
+    {
+      category: 'Visual Creation',
+      links: navigationLinks.slice(6, 8),
     },
     {
       category: 'More AI Tools',

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ExternalLink, Phone, Mail } from 'lucide-react';
 
@@ -10,6 +11,7 @@ const Footer = () => {
     { name: 'Playwriter GPT', href: 'https://playwritergpt.lovable.app/' },
     { name: 'Movie Script Writer GPT', href: 'https://moviescriptwritergpt.lovable.app/' },
     { name: 'Movie Scene Maker GPT', href: 'https://moviescenemakergpt.lovable.app/?via=aiwebtools' },
+    { name: 'Movie Maker AI Studio', href: 'https://moviemakerstudio.lovable.app/?via=aiwebtools' },
   ];
 
   const resourceLinks = [

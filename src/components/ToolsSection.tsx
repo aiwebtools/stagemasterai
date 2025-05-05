@@ -1,6 +1,7 @@
+
 import React from 'react';
 import ToolCard from '@/components/ToolCard';
-import { Palette, Music, Theater, LampDesk, PenTool, Film, Video } from 'lucide-react';
+import { Palette, Music, Theater, LampDesk, PenTool, Film, Video, Clapperboard } from 'lucide-react';
 
 const ToolsSection = () => {
   const tools = [
@@ -100,6 +101,20 @@ const ToolsSection = () => {
         "Hyper-realistic 4K scene generation with perfect continuity",
         "Scene-by-scene storyboard creation with you as the star",
         "Download your scenes as storyboard or image collection to animate with Sora"
+      ]
+    },
+    {
+      title: "Movie Maker AI Studio",
+      description: "Complete AI toolset for professional movie production. Create scripts, scenes, trailers, animations, and add sound effects all from your computer.",
+      icon: <Clapperboard className="text-stage-dark" size={32} />,
+      color: "bg-purple-gradient text-stage-dark",
+      href: "https://moviemakerstudio.lovable.app/?via=aiwebtools",
+      features: [
+        "All-in-one movie production suite",
+        "Script writing and scene generation tools",
+        "Trailer and cover creation",
+        "Animation and visual effects",
+        "Sound design and music composition tools"
       ]
     }
   ];
