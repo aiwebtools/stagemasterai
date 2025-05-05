@@ -14,7 +14,7 @@ const Hero = () => {
     const starfield = starsRef.current;
     starfield.innerHTML = '';
     
-    const numStars = 100;
+    const numStars = 150;
     for (let i = 0; i < numStars; i++) {
       const star = document.createElement('div');
       star.classList.add('star');
@@ -69,6 +69,8 @@ const Hero = () => {
       <div className="moving-spotlight moving-spotlight-1"></div>
       <div className="moving-spotlight moving-spotlight-2"></div>
       <div className="moving-spotlight moving-spotlight-3"></div>
+      <div className="moving-spotlight moving-spotlight-4"></div>
+      <div className="moving-spotlight moving-spotlight-5"></div>
       
       {/* Featured Image */}
       <div className="absolute inset-0 flex items-center justify-center opacity-30 z-0">
@@ -116,12 +118,12 @@ const Hero = () => {
       <div className="container px-4 mx-auto relative z-10">
         <div className="flex flex-col items-center text-center">
           <div className="inline-block mb-4">
-            <span className="px-3 py-1 text-xs font-medium rounded-full bg-white/10 text-white backdrop-blur-sm">
+            <span className="px-3 py-1 text-xs font-medium rounded-full bg-white/10 text-white backdrop-blur-sm animate-pulse-slow">
               Complete AI Creative Suite for Stage & Screen
             </span>
           </div>
           
-          <h1 className="headline text-4xl md:text-6xl lg:text-7xl mb-6 max-w-4xl leading-tight">
+          <h1 className="headline text-4xl md:text-6xl lg:text-7xl mb-6 max-w-4xl leading-tight animate-text-glow">
             <span className="text-gold-gradient">Transform</span> Your Creative Vision with <span className="text-gold-gradient">AI</span>
           </h1>
           
@@ -132,15 +134,15 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <a 
               href="#tools" 
-              className="interactive-button bg-gold-gradient"
+              className="epic-button bg-gold-gradient"
             >
-              <span className="text-stage-dark font-semibold">Explore All Creative AI Tools</span>
+              <span className="text-stage-dark font-semibold relative z-10">Explore All Creative AI Tools</span>
             </a>
             <a 
               href="#how-it-works" 
-              className="interactive-button"
+              className="epic-button-outline"
             >
-              <span className="text-white flex items-center gap-2">
+              <span className="text-white flex items-center gap-2 relative z-10">
                 How It Works <ArrowRight size={16} />
               </span>
             </a>
@@ -152,21 +154,23 @@ const Hero = () => {
                 href="https://playwritergpt.lovable.app/"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="interactive-button bg-gold-gradient"
+                className="playwriter-btn epic-button bg-gold-gradient"
               >
-                <span className="text-stage-dark flex items-center gap-2 font-semibold">
+                <span className="text-stage-dark flex items-center gap-2 font-semibold relative z-10">
                   <PenTool size={18} /> Try PlayWriter GPT <ExternalLink size={16} />
                 </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md -z-10"></div>
               </a>
               <a 
                 href="https://moviescriptwritergpt.lovable.app/"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="interactive-button bg-green-gradient"
+                className="moviescript-btn epic-button bg-green-gradient"
               >
-                <span className="text-stage-dark flex items-center gap-2 font-semibold">
+                <span className="text-stage-dark flex items-center gap-2 font-semibold relative z-10">
                   <Film size={18} className="text-stage-dark" /> Try Movie Script Writer <ExternalLink size={16} />
                 </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-300 via-green-400 to-emerald-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md -z-10"></div>
               </a>
             </div>
           </div>

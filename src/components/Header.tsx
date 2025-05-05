@@ -70,9 +70,11 @@ const Header = () => {
       )}
     >
       <div className="container flex items-center justify-between px-4 mx-auto">
-        <a href="/" className="flex items-center gap-2 z-50">
-          <div className="relative h-10 w-10 rounded-full bg-gold-gradient flex items-center justify-center">
+        <a href="/" className="flex items-center gap-2 z-50 animate-pulse-glow">
+          <div className="relative h-10 w-10 rounded-full bg-gold-gradient flex items-center justify-center animate-rotate-slow shadow-[0_0_15px_rgba(255,215,0,0.7)]">
             <span className="text-stage-dark text-xl font-bold">🎭</span>
+            <div className="absolute -inset-1 rounded-full bg-gold-gradient opacity-30 blur-sm"></div>
+            <div className="absolute -inset-2 rounded-full bg-gold-gradient opacity-20 blur-md"></div>
           </div>
           <div>
             <h1 className="text-lg font-heading font-bold text-gold-gradient">
@@ -111,11 +113,11 @@ const Header = () => {
       {/* Mobile Menu Overlay */}
       <div 
         className={cn(
-          "fixed inset-0 z-40 bg-stage-dark pt-20 transform transition-transform duration-300 ease-in-out md:hidden",
+          "fixed inset-0 z-40 bg-stage-dark/95 pt-20 transform transition-transform duration-300 ease-in-out md:hidden backdrop-blur-xl shadow-2xl border-t border-white/10",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <div className="p-6 overflow-y-auto max-h-[calc(100vh-5rem)]">
+        <div className="p-6 overflow-y-auto max-h-[calc(100vh-5rem)] bg-[#0A0A12]">
           {/* Accordion Navigation for Mobile */}
           <Accordion type="single" collapsible className="w-full">
             {groupedLinks.map((group, groupIndex) => (
@@ -135,12 +137,19 @@ const Header = () => {
                 )}
                 {!group.href && (
                   <AccordionContent className="pb-2">
-                    <div className="flex flex-col space-y-2 pl-2">
+                    <div className="flex flex-col space-y-2 pl-2 rounded-lg bg-white/5 p-3">
                       {group.links.map((link, linkIndex) => (
                         <a
                           key={linkIndex}
                           href={link.href}
-                          className="py-2 text-white/80 hover:text-white transition-colors"
+                          className={cn(
+                            "py-3 px-4 rounded-md transition-all",
+                            link.name.includes("Playwriter") 
+                              ? "bg-gold-gradient text-stage-dark font-medium hover:shadow-lg hover:shadow-gold/30 shimmer" 
+                              : link.name.includes("Movie Script") 
+                                ? "bg-green-gradient text-stage-dark font-medium hover:shadow-lg hover:shadow-green-500/30 shimmer"
+                                : "text-white/80 hover:text-white hover:bg-white/10"
+                          )}
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {link.name}
