@@ -1,11 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +40,22 @@ const Header = () => {
     { name: 'More AI Tools', href: 'https://www.aiwebtools.ai' },
   ];
 
+  // Group navigation links into categories for mobile accordion
+  const groupedLinks = [
+    {
+      category: 'Theater GPTs',
+      links: navigationLinks.slice(0, 4),
+    },
+    {
+      category: 'Script Writing GPTs',
+      links: navigationLinks.slice(4, 7),
+    },
+    {
+      category: 'More',
+      links: navigationLinks.slice(7),
+    }
+  ];
+
   return (
     <header 
       className={cn(
@@ -45,7 +64,7 @@ const Header = () => {
       )}
     >
       <div className="container flex items-center justify-between px-4 mx-auto">
-        <a href="/" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2 z-50">
           <div className="relative h-10 w-10 rounded-full bg-gold-gradient flex items-center justify-center">
             <span className="text-stage-dark text-xl font-bold">🎭</span>
           </div>
@@ -59,6 +78,7 @@ const Header = () => {
           </div>
         </a>
 
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           {navigationLinks.map((link, index) => (
             <a
@@ -72,8 +92,9 @@ const Header = () => {
           ))}
         </nav>
 
+        {/* Mobile Menu Toggle Button */}
         <button 
-          className="md:hidden p-2 text-white/80 hover:text-white"
+          className="md:hidden p-2 text-white/80 hover:text-white z-50"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -81,34 +102,39 @@ const Header = () => {
         </button>
       </div>
 
+      {/* Mobile Menu Overlay */}
       <div 
         className={cn(
           "fixed inset-0 z-40 bg-stage-dark pt-20 transform transition-transform duration-300 ease-in-out md:hidden",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <div className="absolute top-4 right-4 z-50">
-          <button 
-            className="p-2 text-white/80 hover:text-white rounded-full bg-white/10"
-            onClick={() => setIsMobileMenuOpen(false)}
-            aria-label="Close menu"
-          >
-            <X size={24} />
-          </button>
+        <div className="p-6 overflow-y-auto max-h-[calc(100vh-5rem)]">
+          {/* Accordion Navigation for Mobile */}
+          <Accordion type="single" collapsible className="w-full">
+            {groupedLinks.map((group, groupIndex) => (
+              <AccordionItem key={groupIndex} value={`item-${groupIndex}`} className="border-b border-white/10">
+                <AccordionTrigger className="py-4 text-lg text-white hover:text-white/80 hover:no-underline">
+                  {group.category}
+                </AccordionTrigger>
+                <AccordionContent className="pb-2">
+                  <div className="flex flex-col space-y-2 pl-2">
+                    {group.links.map((link, linkIndex) => (
+                      <a
+                        key={linkIndex}
+                        href={link.href}
+                        className="py-2 text-white/80 hover:text-white transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {link.name}
+                      </a>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
-        
-        <nav className="flex flex-col items-start gap-4 p-6 overflow-y-auto max-h-[calc(100vh-5rem)]">
-          {navigationLinks.map((link, index) => (
-            <a
-              key={index}
-              href={link.href}
-              className="text-lg text-white/80 hover:text-white transition-colors py-2 w-full border-b border-white/10"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {link.name}
-            </a>
-          ))}
-        </nav>
       </div>
     </header>
   );
