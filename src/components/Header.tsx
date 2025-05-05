@@ -51,8 +51,9 @@ const Header = () => {
       links: navigationLinks.slice(4, 7),
     },
     {
-      category: 'More',
-      links: navigationLinks.slice(7),
+      category: 'More AI Tools',
+      links: [], // Empty array since we'll use the category as a direct link
+      href: 'https://www.aiwebtools.ai'
     }
   ];
 
@@ -114,23 +115,35 @@ const Header = () => {
           <Accordion type="single" collapsible className="w-full">
             {groupedLinks.map((group, groupIndex) => (
               <AccordionItem key={groupIndex} value={`item-${groupIndex}`} className="border-b border-white/10">
-                <AccordionTrigger className="py-4 text-lg text-white hover:text-white/80 hover:no-underline">
-                  {group.category}
-                </AccordionTrigger>
-                <AccordionContent className="pb-2">
-                  <div className="flex flex-col space-y-2 pl-2">
-                    {group.links.map((link, linkIndex) => (
-                      <a
-                        key={linkIndex}
-                        href={link.href}
-                        className="py-2 text-white/80 hover:text-white transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {link.name}
-                      </a>
-                    ))}
-                  </div>
-                </AccordionContent>
+                {group.href ? (
+                  <a 
+                    href={group.href}
+                    className="flex items-center justify-between w-full py-4 text-lg text-white hover:text-white/80 transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {group.category}
+                  </a>
+                ) : (
+                  <AccordionTrigger className="py-4 text-lg text-white hover:text-white/80 hover:no-underline">
+                    {group.category}
+                  </AccordionTrigger>
+                )}
+                {!group.href && (
+                  <AccordionContent className="pb-2">
+                    <div className="flex flex-col space-y-2 pl-2">
+                      {group.links.map((link, linkIndex) => (
+                        <a
+                          key={linkIndex}
+                          href={link.href}
+                          className="py-2 text-white/80 hover:text-white transition-colors"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {link.name}
+                        </a>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                )}
               </AccordionItem>
             ))}
           </Accordion>
