@@ -122,7 +122,7 @@ const ToolsSection = () => {
       description: "Create stunning music videos with AI technology. Generate concepts, storyboards, and complete music video projects in minutes.",
       icon: <MusicIcon className="text-stage-dark" size={32} />,
       color: "bg-pink-gradient text-stage-dark",
-      href: "https://chatgpt.com/g/g-6818b77ba8948191abb42058c0a48770-music-video-maker-gpt",
+      href: "https://musicvideomakergpt.lovable.app/?via=aiwebtools",
       features: [
         "AI-generated music video concepts",
         "Visual style and aesthetic direction",
