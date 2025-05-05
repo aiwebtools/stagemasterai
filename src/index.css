@@ -206,33 +206,33 @@
   
   .epic-button {
     @apply relative inline-flex items-center justify-center px-6 py-4 font-semibold overflow-hidden transition-all duration-500 rounded-full
-    shadow-lg group hover:shadow-xl active:scale-95 hover:scale-105;
+    shadow-lg hover:shadow-xl active:scale-95 hover:scale-105;
   }
   
   .epic-button::before {
     content: '';
-    @apply absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+    @apply absolute inset-0 bg-white/20 opacity-0 transition-opacity duration-300;
   }
   
   .epic-button::after {
     content: '';
-    @apply absolute -inset-[3px] rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 blur-md transition-all duration-500;
+    @apply absolute -inset-[3px] rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 blur-md transition-all duration-500;
     animation: button-glow 2s infinite alternate;
   }
   
   .epic-button-outline {
     @apply relative inline-flex items-center justify-center px-6 py-4 font-semibold overflow-hidden transition-all duration-500 rounded-full
-    border border-white/20 bg-white/5 backdrop-blur-sm shadow-lg group hover:shadow-xl active:scale-95 hover:scale-105 hover:border-white/40;
+    border border-white/20 bg-white/5 backdrop-blur-sm shadow-lg hover:shadow-xl active:scale-95 hover:scale-105 hover:border-white/40;
   }
   
   .epic-button-outline::before {
     content: '';
-    @apply absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+    @apply absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-300;
   }
   
   .epic-button-outline::after {
     content: '';
-    @apply absolute -inset-[3px] rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 blur-sm transition-all duration-500;
+    @apply absolute -inset-[3px] rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 blur-sm transition-all duration-500;
     animation: button-glow 2s infinite alternate;
   }
 

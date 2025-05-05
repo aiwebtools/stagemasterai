@@ -134,13 +134,13 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <a 
               href="#tools" 
-              className="epic-button bg-gold-gradient"
+              className="epic-button bg-gold-gradient group"
             >
               <span className="text-stage-dark font-semibold relative z-10">Explore All Creative AI Tools</span>
             </a>
             <a 
               href="#how-it-works" 
-              className="epic-button-outline"
+              className="epic-button-outline group"
             >
               <span className="text-white flex items-center gap-2 relative z-10">
                 How It Works <ArrowRight size={16} />
@@ -154,7 +154,7 @@ const Hero = () => {
                 href="https://playwritergpt.lovable.app/"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="playwriter-btn epic-button bg-gold-gradient"
+                className="playwriter-btn epic-button bg-gold-gradient group"
               >
                 <span className="text-stage-dark flex items-center gap-2 font-semibold relative z-10">
                   <PenTool size={18} /> Try PlayWriter GPT <ExternalLink size={16} />
@@ -165,7 +165,7 @@ const Hero = () => {
                 href="https://moviescriptwritergpt.lovable.app/"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="moviescript-btn epic-button bg-green-gradient"
+                className="moviescript-btn epic-button bg-green-gradient group"
               >
                 <span className="text-stage-dark flex items-center gap-2 font-semibold relative z-10">
                   <Film size={18} className="text-stage-dark" /> Try Movie Script Writer <ExternalLink size={16} />
