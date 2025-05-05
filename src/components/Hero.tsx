@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, PenTool, ExternalLink, Film } from 'lucide-react';
 
@@ -162,13 +161,13 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md -z-10"></div>
               </a>
               <a 
-                href="https://moviescriptwritergpt.lovable.app/"
+                href="https://moviemakerstudio.lovable.app/?via=aiwebtools"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="moviescript-btn epic-button bg-green-gradient group"
               >
                 <span className="text-stage-dark flex items-center gap-2 font-semibold relative z-10">
-                  <Film size={18} className="text-stage-dark" /> Try Movie Script Writer <ExternalLink size={16} />
+                  <Film size={18} className="text-stage-dark" /> Try AI Movie Maker Studio <ExternalLink size={16} />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-300 via-green-400 to-emerald-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md -z-10"></div>
               </a>
