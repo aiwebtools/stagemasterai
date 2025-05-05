@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ToolCard from '@/components/ToolCard';
-import { Palette, Music, Theater, LampDesk, PenTool, Film, Video, Clapperboard } from 'lucide-react';
+import { Palette, Music, Theater, LampDesk, PenTool, Film, Video, Clapperboard, Music as MusicIcon } from 'lucide-react';
 
 const ToolsSection = () => {
   const tools = [
@@ -115,6 +115,20 @@ const ToolsSection = () => {
         "Trailer and cover creation",
         "Animation and visual effects",
         "Sound design and music composition tools"
+      ]
+    },
+    {
+      title: "Music Video Maker GPT",
+      description: "Create stunning music videos with AI technology. Generate concepts, storyboards, and complete music video projects in minutes.",
+      icon: <MusicIcon className="text-stage-dark" size={32} />,
+      color: "bg-pink-gradient text-stage-dark",
+      href: "https://chatgpt.com/g/g-6818b77ba8948191abb42058c0a48770-music-video-maker-gpt",
+      features: [
+        "AI-generated music video concepts",
+        "Visual style and aesthetic direction",
+        "Shot-by-shot storyboarding",
+        "Artist branding integration",
+        "Production planning and technical guidance"
       ]
     }
   ];

@@ -9,6 +9,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import FAQSection from '@/components/FAQSection';
 import DisclaimerSection from '@/components/DisclaimerSection';
 import DisclaimerPopup from '@/components/DisclaimerPopup';
+import FloatingButton from '@/components/FloatingButton';
 import { toast } from '@/hooks/use-toast';
 
 const Index = () => {
@@ -58,6 +59,7 @@ const Index = () => {
       </main>
       
       <Footer />
+      <FloatingButton />
       
       <DisclaimerPopup 
         open={showDisclaimer} 
