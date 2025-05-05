@@ -64,6 +64,11 @@ const Hero = () => {
     >
       <div ref={starsRef} className="star-field"></div>
       <div ref={spotlightRef} className="spotlight"></div>
+
+      {/* Moving Spotlights */}
+      <div className="moving-spotlight moving-spotlight-1"></div>
+      <div className="moving-spotlight moving-spotlight-2"></div>
+      <div className="moving-spotlight moving-spotlight-3"></div>
       
       {/* Featured Image */}
       <div className="absolute inset-0 flex items-center justify-center opacity-30 z-0">

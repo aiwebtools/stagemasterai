@@ -45,11 +45,11 @@ const Header = () => {
   const groupedLinks = [
     {
       category: 'Theater GPTs',
-      links: navigationLinks.slice(0, 4),
+      links: [...navigationLinks.slice(0, 4), navigationLinks[4]], // Include Playwriter GPT
     },
     {
       category: 'Script Writing GPTs',
-      links: navigationLinks.slice(4, 6),
+      links: [navigationLinks[4], navigationLinks[5]], // Include Playwriter GPT here too
     },
     {
       category: 'Visual Creation',
