@@ -12,6 +12,7 @@ const Footer = () => {
     { name: 'Movie Scene Maker GPT', href: 'https://moviescenemakergpt.lovable.app/?via=aiwebtools' },
     { name: 'Movie Maker AI Studio', href: 'https://moviemakerstudio.lovable.app/?via=aiwebtools' },
     { name: 'Music Video Maker GPT', href: 'https://musicvideomakergpt.lovable.app/?via=aiwebtools' },
+    { name: 'Commercial Scene Maker GPT', href: 'https://chatgpt.com/g/g-681a201fe69c8191b99e1636be90139e-commercial-scene-maker-gpt' },
   ];
 
   const resourceLinks = [
