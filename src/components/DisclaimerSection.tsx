@@ -27,6 +27,8 @@ const DisclaimerSection = () => {
           </h2>
           
           <div className="glass-card p-6 md:p-8 text-white/80 text-sm space-y-4">
+            <p><strong>Usage Terms:</strong> StageMaster AI Suite tools are available with <strong>unlimited access for ChatGPT Plus subscribers</strong>. Free ChatGPT accounts have limited interactions and may experience usage restrictions after several prompts per hour.</p>
+            
             <p><strong>Disclaimer of Liability:</strong> The StageMaster AI Suite tools are provided "as is" and "as available" without warranties of any kind, either express or implied. AI WEB TOOLS LLC does not warrant that the tools will be error-free, secure, or uninterrupted.</p>
             
             <p><strong>No Professional Advice:</strong> Our AI tools generate creative suggestions and designs based on your inputs, but these outputs should not be considered professional engineering, architectural, or safety advice. All designs, particularly those involving structural elements, rigging, electrical systems, or performer safety, should be reviewed and approved by qualified professionals before implementation.</p>

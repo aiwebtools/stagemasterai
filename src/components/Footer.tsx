@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ExternalLink, Phone, Mail } from 'lucide-react';
 
@@ -35,7 +36,7 @@ const Footer = () => {
                   StageMaster AI Suite
                 </h1>
                 <div className="text-xs text-white/70">
-                  By <a href="https://www.aiwebtools.ai" className="hover:text-white">AiWebTools.Ai</a>
+                  By <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="hover:text-white">AiWebTools.Ai</a>
                 </div>
               </div>
             </a>
@@ -69,6 +70,8 @@ const Footer = () => {
                   <li key={index}>
                     <a 
                       href={link.href} 
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                     >
                       {link.name}
@@ -79,6 +82,8 @@ const Footer = () => {
                 <li>
                   <a 
                     href="https://www.aiwebtools.ai" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
                     MORE AI TOOLS
@@ -103,6 +108,8 @@ const Footer = () => {
                 <li>
                   <a 
                     href="https://openai.com/policies/privacy-policy/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
                     Privacy Policy
@@ -112,6 +119,8 @@ const Footer = () => {
                 <li>
                   <a 
                     href="https://aiwebtools.ai/terms-of-services" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1 group"
                   >
                     Terms of Service
@@ -126,10 +135,12 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between">
           <p className="text-white/60 text-sm mb-4 md:mb-0">
-            © 2025 <a href="https://www.aiwebtools.ai" className="hover:text-white">AI WEB TOOLS LLC</a>. All rights reserved.
+            © 2025 <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="hover:text-white">AI WEB TOOLS LLC</a>. All rights reserved.
           </p>
           <a 
             href="https://www.aiwebtools.ai"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full py-2 px-6 bg-white/10 hover:bg-white/20 transition-colors text-white text-sm flex items-center gap-2 hover:shadow-lg hover:shadow-white/5"
           >
             Discover More AI Tools
