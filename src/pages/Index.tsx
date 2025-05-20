@@ -16,9 +16,6 @@ const Index = () => {
   const [showDisclaimer, setShowDisclaimer] = useState(false);
   
   useEffect(() => {
-    // Update document title
-    document.title = "StageMaster AI Suite | Advanced AI Tools for Theater Production";
-    
     // Check if the user has already accepted the disclaimer
     const hasAcceptedDisclaimer = localStorage.getItem('disclaimerAccepted');
     
