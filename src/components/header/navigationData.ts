@@ -24,8 +24,8 @@ export const groupedLinks = [
   {
     category: 'Movie & Commercial Creation',
     links: [
+      navigationLinks[7], // Movie Maker AI Studio - now first
       navigationLinks[6], // Movie Scene Maker GPT
-      navigationLinks[7], // Movie Maker AI Studio
       navigationLinks[8], // Music Video Maker GPT
     ],
   }
