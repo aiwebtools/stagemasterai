@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
   NavigationMenu,
@@ -22,20 +22,24 @@ const DesktopHeader = () => {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="text-white/90 hover:text-white bg-transparent hover:bg-white/10 data-[state=open]:bg-white/10">
+            <NavigationMenuTrigger className="text-white/90 hover:text-white bg-gradient-to-r from-purple-600/20 to-blue-600/20 hover:from-purple-600/30 hover:to-blue-600/30 border border-white/10 hover:border-white/20 data-[state=open]:from-purple-600/30 data-[state=open]:to-blue-600/30 data-[state=open]:border-white/20 transition-all duration-300 backdrop-blur-sm shadow-lg hover:shadow-xl group">
+              <Sparkles className="h-4 w-4 mr-2 text-purple-300 group-hover:text-purple-200 transition-colors" />
               AI Tools
             </NavigationMenuTrigger>
-            <NavigationMenuContent className="bg-stage-dark/95 backdrop-blur-xl border border-white/10 shadow-2xl">
-              <div className="w-96 p-4">
-                <div className="space-y-3">
+            <NavigationMenuContent className="bg-gradient-to-br from-stage-dark/98 to-purple-900/95 backdrop-blur-xl border border-white/20 shadow-2xl rounded-xl overflow-hidden">
+              <div className="w-96 p-6">
+                <div className="space-y-4">
                   {groupedLinks.map((group, groupIndex) => (
                     <Collapsible key={groupIndex} className="w-full">
-                      <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg bg-white/5 px-3 py-2 text-sm font-medium text-white hover:bg-white/10 hover:text-gold-gradient transition-colors">
-                        {group.category}
-                        <ChevronDown className="h-4 w-4 text-white/60" />
+                      <CollapsibleTrigger className="flex w-full items-center justify-between rounded-xl bg-gradient-to-r from-white/8 to-white/4 hover:from-white/15 hover:to-white/8 px-4 py-3 text-sm font-semibold text-white hover:text-purple-200 transition-all duration-300 border border-white/5 hover:border-white/20 shadow-sm hover:shadow-lg group backdrop-blur-sm">
+                        <span className="flex items-center gap-2">
+                          <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-blue-400 group-hover:from-purple-300 group-hover:to-blue-300 transition-colors"></div>
+                          {group.category}
+                        </span>
+                        <ChevronDown className="h-4 w-4 text-white/60 group-hover:text-white/80 transition-all duration-300 group-data-[state=open]:rotate-180" />
                       </CollapsibleTrigger>
-                      <CollapsibleContent className="mt-1">
-                        <div className="bg-black/20 rounded-lg border border-white/5 overflow-hidden">
+                      <CollapsibleContent className="mt-2">
+                        <div className="bg-black/30 rounded-xl border border-white/10 overflow-hidden backdrop-blur-sm shadow-inner">
                           {group.links.map((link, linkIndex) => (
                             <NavigationMenuLink key={linkIndex} asChild>
                               <a
@@ -43,15 +47,32 @@ const DesktopHeader = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={cn(
-                                  "block px-3 py-2 text-sm transition-all border-b border-white/5 last:border-b-0",
+                                  "block px-4 py-3 text-sm transition-all duration-300 border-b border-white/5 last:border-b-0 relative overflow-hidden group/item",
+                                  "hover:bg-gradient-to-r hover:from-white/10 hover:to-white/5",
+                                  "before:absolute before:inset-0 before:bg-gradient-to-r before:opacity-0 before:transition-opacity before:duration-300",
+                                  "hover:before:opacity-100 hover:shadow-lg hover:scale-[1.02] hover:z-10",
+                                  "active:scale-[0.98] active:transition-transform active:duration-100",
                                   link.name.includes("Playwriter") 
-                                    ? "bg-gradient-to-r from-yellow-500/10 to-orange-500/10 text-yellow-300 hover:from-yellow-500/20 hover:to-orange-500/20 font-medium" 
+                                    ? "text-yellow-200 hover:text-yellow-100 before:from-yellow-500/20 before:to-orange-500/20 font-semibold" 
                                     : link.name.includes("Movie Script") 
-                                      ? "bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-300 hover:from-green-500/20 hover:to-emerald-500/20 font-medium"
-                                      : "text-white/80 hover:text-white hover:bg-white/10"
+                                      ? "text-green-200 hover:text-green-100 before:from-green-500/20 before:to-emerald-500/20 font-semibold"
+                                      : "text-white/85 hover:text-white"
                                 )}
                               >
-                                {link.name}
+                                <span className="relative z-10 flex items-center gap-2">
+                                  <div className={cn(
+                                    "w-1.5 h-1.5 rounded-full transition-all duration-300 group-hover/item:scale-125",
+                                    link.name.includes("Playwriter") 
+                                      ? "bg-gradient-to-r from-yellow-400 to-orange-400" 
+                                      : link.name.includes("Movie Script") 
+                                        ? "bg-gradient-to-r from-green-400 to-emerald-400"
+                                        : "bg-gradient-to-r from-blue-400 to-purple-400"
+                                  )}></div>
+                                  {link.name}
+                                  <div className="ml-auto opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                                    <div className="w-1 h-1 rounded-full bg-white/60"></div>
+                                  </div>
+                                </span>
                               </a>
                             </NavigationMenuLink>
                           ))}
@@ -66,10 +87,14 @@ const DesktopHeader = () => {
                       href="https://www.aiwebtools.ai"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full rounded-lg bg-white/5 px-3 py-2 text-sm font-medium text-white hover:bg-white/10 hover:text-gold-gradient transition-colors"
+                      className="flex items-center justify-between w-full rounded-xl bg-gradient-to-r from-purple-600/30 to-blue-600/30 hover:from-purple-600/40 hover:to-blue-600/40 px-4 py-3 text-sm font-semibold text-white hover:text-purple-100 transition-all duration-300 border border-purple-400/30 hover:border-purple-300/50 shadow-lg hover:shadow-xl group backdrop-blur-sm relative overflow-hidden"
                     >
-                      <span>More AI Tools</span>
-                      <ChevronDown className="h-4 w-4 text-white/60" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative z-10 flex items-center gap-2">
+                        <Sparkles className="h-4 w-4 text-purple-300 group-hover:text-purple-200 transition-colors" />
+                        More AI Tools
+                      </span>
+                      <ChevronDown className="h-4 w-4 text-white/60 group-hover:text-white/80 transition-all duration-300 relative z-10" />
                     </a>
                   </NavigationMenuLink>
                 </div>
