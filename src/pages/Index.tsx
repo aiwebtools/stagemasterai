@@ -1,8 +1,8 @@
-
 import React, { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
+import VideoSection from '@/components/VideoSection';
 import ToolsSection from '@/components/ToolsSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
@@ -48,6 +48,7 @@ const Index = () => {
       
       <main>
         <Hero />
+        <VideoSection />
         <ToolsSection />
         <HowItWorksSection />
         <TestimonialsSection />

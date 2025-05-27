@@ -1,4 +1,3 @@
-
 import React from 'react';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 import { PenTool, Film, ExternalLink } from 'lucide-react';
@@ -39,8 +38,6 @@ const HowItWorksSection = () => {
         </div>
         
         <div className="max-w-4xl mx-auto mb-8 md:mb-12">
-          <YouTubeEmbed videoId="-QIxYSlcRWM" title="StageMaster AI Suite Demo" />
-          
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <a 
               href="https://playwritergpt.lovable.app/"
