@@ -1,7 +1,5 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, PenTool, ExternalLink, Film } from 'lucide-react';
-import YouTubeEmbed from '@/components/YouTubeEmbed';
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -131,10 +129,6 @@ const Hero = () => {
           <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed">
             A comprehensive suite of AI tools for the entire creative process - from scriptwriting and set design to costumes, choreography, and lighting.
           </p>
-          
-          <div className="max-w-4xl mx-auto mb-10">
-            <YouTubeEmbed videoId="-QIxYSlcRWM" title="StageMaster AI Suite Demo" />
-          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <a 
