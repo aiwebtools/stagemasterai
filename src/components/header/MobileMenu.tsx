@@ -143,7 +143,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
                   <div className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />
                   <p className="text-xs text-white/60 font-medium">
-                    Powered by AI • Created with ❤️
+                    POWERED BY AI WEB TOOLS • Created with ❤️
                   </p>
                 </div>
               </div>
