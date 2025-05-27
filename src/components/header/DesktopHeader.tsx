@@ -14,6 +14,8 @@ const DesktopHeader = () => {
           <a
             key={index}
             href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm text-white/70 hover:text-white transition-colors relative group"
           >
             {link.name}

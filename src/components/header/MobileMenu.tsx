@@ -51,6 +51,8 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                       <a
                         key={linkIndex}
                         href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className={cn(
                           "block px-3 py-3 transition-all border-b border-white/5 last:border-b-0 text-sm",
                           link.name.includes("Playwriter") 
@@ -73,6 +75,8 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             <div className="border border-white/10 rounded-lg bg-white/5 backdrop-blur-sm overflow-hidden">
               <a 
                 href="https://www.aiwebtools.ai"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-between w-full px-3 py-3 text-sm font-medium text-white hover:text-gold-gradient transition-colors hover:bg-white/10"
                 onClick={onClose}
               >
