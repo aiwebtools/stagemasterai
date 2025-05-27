@@ -168,7 +168,7 @@ const ToolsSection = () => {
             Specialized AI Tools for Every Creative Need
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            Each tool in the StageMaster AI Suite is designed to enhance your creative process - from set design and lighting to scriptwriting and choreography.
+            A comprehensive suite of AI tools to support your entire creative process—from scriptwriting and set design to costumes, choreography, and lighting.
           </p>
         </div>
         
