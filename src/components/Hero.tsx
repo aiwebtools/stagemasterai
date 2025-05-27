@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, PenTool, ExternalLink, Film } from 'lucide-react';
 
@@ -147,7 +148,7 @@ const Hero = () => {
             </a>
           </div>
           
-          <div className="glass-card p-6 max-w-4xl shadow-2xl">
+          <div className="glass-card p-6 max-w-4xl shadow-2xl mb-6">
             <div className="flex flex-wrap justify-center gap-4">
               <a 
                 href="https://playwritergpt.lovable.app/"
@@ -172,6 +173,10 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-300 via-green-400 to-emerald-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md -z-10"></div>
               </a>
             </div>
+          </div>
+
+          <div className="text-sm text-white/60 italic">
+            "Your Launch Pad to the Tools That Power Your Story."
           </div>
         </div>
       </div>
