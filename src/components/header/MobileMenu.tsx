@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { ChevronDown, AlertTriangle } from 'lucide-react';
+import { ChevronDown, AlertTriangle, ExternalLink } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { groupedLinks } from './navigationData';
 
@@ -11,103 +12,132 @@ interface MobileMenuProps {
 
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   return (
-    <div 
-      className={cn(
-        "fixed inset-0 z-40 transform transition-transform duration-300 ease-in-out md:hidden",
-        isOpen ? "translate-x-0" : "translate-x-full"
-      )}
-      style={{ top: '60px' }}
-    >
-      {/* Backdrop */}
+    <>
+      {/* Enhanced Backdrop with blur */}
       <div 
-        className="absolute inset-0 bg-gradient-to-br from-stage-dark/95 via-purple-900/20 to-stage-dark/95 backdrop-blur-xl" 
+        className={cn(
+          "fixed inset-0 z-40 transition-all duration-500 ease-out md:hidden",
+          isOpen 
+            ? "opacity-100 visible backdrop-blur-xl bg-black/60" 
+            : "opacity-0 invisible"
+        )}
+        style={{ top: '60px' }}
         onClick={onClose}
       />
       
-      {/* Menu Content */}
-      <div className="relative h-full max-h-screen overflow-y-auto bg-gradient-to-b from-stage-dark/90 to-[#0A0A12]/95 shadow-2xl">
-        <div className="p-4">
-          {/* Header */}
-          <div className="mb-4 pb-3 border-b border-white/10">
-            <h2 className="text-lg font-heading font-bold text-white mb-1">Navigation</h2>
-            <p className="text-sm text-white/60">Explore our AI creative tools</p>
-          </div>
+      {/* Enhanced Menu Content */}
+      <div 
+        className={cn(
+          "fixed right-0 top-[60px] z-50 h-[calc(100vh-60px)] w-full max-w-sm transform transition-all duration-500 ease-out md:hidden",
+          isOpen ? "translate-x-0" : "translate-x-full"
+        )}
+      >
+        <div className="h-full overflow-y-auto bg-gradient-to-b from-stage-dark/95 via-stage-dark/98 to-black/95 backdrop-blur-2xl border-l border-white/10 shadow-2xl">
+          <div className="p-6">
+            {/* Enhanced Header */}
+            <div className="mb-6 pb-4 border-b border-gradient-to-r from-transparent via-white/20 to-transparent">
+              <h2 className="text-xl font-heading font-bold text-gradient bg-gradient-to-r from-white via-gold-400 to-white bg-clip-text">
+                Navigation
+              </h2>
+              <p className="text-sm text-white/70 mt-1">Explore our AI creative tools</p>
+            </div>
 
-          {/* Accordion Navigation for Mobile */}
-          <Accordion type="single" collapsible className="w-full space-y-2">
-            {groupedLinks.map((group, groupIndex) => (
-              <AccordionItem 
-                key={groupIndex} 
-                value={`item-${groupIndex}`} 
-                className="border border-white/10 rounded-lg bg-white/5 backdrop-blur-sm overflow-hidden"
-              >
-                <AccordionTrigger className="px-3 py-3 text-sm font-medium text-white hover:text-gold-gradient hover:no-underline data-[state=open]:text-gold-gradient">
-                  {group.category}
-                </AccordionTrigger>
-                <AccordionContent className="p-0">
-                  <div className="bg-black/20 border-t border-white/10">
-                    {group.links.map((link, linkIndex) => (
-                      <a
-                        key={linkIndex}
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={cn(
-                          "block px-3 py-3 transition-all border-b border-white/5 last:border-b-0 text-sm",
-                          link.name.includes("Playwriter") 
-                            ? "bg-gradient-to-r from-yellow-500/10 to-orange-500/10 text-yellow-300 hover:from-yellow-500/20 hover:to-orange-500/20 font-medium" 
-                            : link.name.includes("Movie Script") 
-                              ? "bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-300 hover:from-green-500/20 hover:to-emerald-500/20 font-medium"
-                              : "text-white/80 hover:text-white hover:bg-white/10"
-                        )}
-                        onClick={onClose}
-                      >
-                        <div className="font-medium">{link.name}</div>
-                      </a>
-                    ))}
+            {/* Enhanced Accordion Navigation */}
+            <Accordion type="single" collapsible className="w-full space-y-3">
+              {groupedLinks.map((group, groupIndex) => (
+                <AccordionItem 
+                  key={groupIndex} 
+                  value={`item-${groupIndex}`} 
+                  className="border border-white/10 rounded-xl bg-white/5 backdrop-blur-sm overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white/8"
+                >
+                  <AccordionTrigger className="px-4 py-4 text-sm font-semibold text-white hover:text-gold-400 hover:no-underline data-[state=open]:text-gold-400 transition-all duration-300 group">
+                    <span className="flex items-center gap-2">
+                      {group.category}
+                      <div className="w-2 h-2 rounded-full bg-gold-400/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="p-0">
+                    <div className="bg-black/30 border-t border-white/5">
+                      {group.links.map((link, linkIndex) => (
+                        <a
+                          key={linkIndex}
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={cn(
+                            "group flex items-center justify-between px-4 py-4 transition-all duration-300 border-b border-white/5 last:border-b-0 text-sm relative overflow-hidden",
+                            link.name.includes("Playwriter") 
+                              ? "bg-gradient-to-r from-yellow-500/10 to-orange-500/10 text-yellow-200 hover:from-yellow-500/20 hover:to-orange-500/20 font-medium hover:text-yellow-100" 
+                              : link.name.includes("Movie Script") 
+                                ? "bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-200 hover:from-green-500/20 hover:to-emerald-500/20 font-medium hover:text-green-100"
+                                : "text-white/80 hover:text-white hover:bg-white/10"
+                          )}
+                          onClick={onClose}
+                        >
+                          <span className="font-medium relative z-10">{link.name}</span>
+                          <ExternalLink className="h-4 w-4 text-white/40 group-hover:text-white/70 transition-colors duration-300" />
+                          
+                          {/* Hover effect overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </a>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+              
+              {/* Enhanced Read Disclaimer Button */}
+              <div className="border border-red-400/30 rounded-xl bg-gradient-to-r from-red-500/10 to-orange-500/10 backdrop-blur-sm overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:border-red-300/50">
+                <a 
+                  href="#disclaimer"
+                  className="group flex items-center justify-between w-full px-4 py-4 text-sm font-semibold text-red-300 hover:text-red-200 transition-all duration-300 hover:bg-red-500/10 relative overflow-hidden"
+                  onClick={onClose}
+                >
+                  <span className="flex items-center gap-3 relative z-10">
+                    <AlertTriangle className="h-5 w-5 animate-pulse" />
+                    Read Disclaimer
+                  </span>
+                  <div className="w-2 h-2 rounded-full bg-red-400/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Hover effect overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </a>
+              </div>
+              
+              {/* Enhanced More AI Tools Button */}
+              <div className="border border-white/20 rounded-xl bg-gradient-to-r from-purple-500/10 to-blue-500/10 backdrop-blur-sm overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30">
+                <a 
+                  href="https://www.aiwebtools.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between w-full px-4 py-4 text-sm font-semibold text-white hover:text-gold-400 transition-all duration-300 hover:bg-white/10 relative overflow-hidden"
+                  onClick={onClose}
+                >
+                  <span className="relative z-10">More AI Tools</span>
+                  <div className="flex items-center gap-2 relative z-10">
+                    <ExternalLink className="h-4 w-4 text-white/60 group-hover:text-gold-400 transition-colors duration-300" />
+                    <ChevronDown className="h-4 w-4 text-white/60 group-hover:text-gold-400 transition-colors duration-300 rotate-[-90deg]" />
                   </div>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-            
-            {/* Read Disclaimer Button */}
-            <div className="border border-white/10 rounded-lg bg-white/5 backdrop-blur-sm overflow-hidden">
-              <a 
-                href="#disclaimer"
-                className="flex items-center justify-between w-full px-3 py-3 text-sm font-medium text-red-300 hover:text-red-200 transition-colors hover:bg-red-500/10 border border-red-400/20 hover:border-red-300/40"
-                onClick={onClose}
-              >
-                <span className="flex items-center gap-2">
-                  <AlertTriangle className="h-4 w-4" />
-                  Read Disclaimer
-                </span>
-              </a>
-            </div>
-            
-            {/* More AI Tools as separate button */}
-            <div className="border border-white/10 rounded-lg bg-white/5 backdrop-blur-sm overflow-hidden">
-              <a 
-                href="https://www.aiwebtools.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between w-full px-3 py-3 text-sm font-medium text-white hover:text-gold-gradient transition-colors hover:bg-white/10"
-                onClick={onClose}
-              >
-                <span>More AI Tools</span>
-                <ChevronDown className="h-4 w-4 text-white/60" />
-              </a>
-            </div>
-          </Accordion>
+                  
+                  {/* Hover effect overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </a>
+              </div>
+            </Accordion>
 
-          {/* Footer */}
-          <div className="mt-6 pt-4 border-t border-white/10 text-center">
-            <p className="text-xs text-white/50">
-              Powered by AI • Created with ❤️
-            </p>
+            {/* Enhanced Footer */}
+            <div className="mt-8 pt-6 border-t border-gradient-to-r from-transparent via-white/20 to-transparent text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+                <div className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />
+                <p className="text-xs text-white/60 font-medium">
+                  Powered by AI • Created with ❤️
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
