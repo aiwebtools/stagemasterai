@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ChevronDown, Sparkles, Film } from 'lucide-react';
+import { ChevronDown, Sparkles, Film, Theater, Palette, Music, Pen, FileText, Video, Clapperboard, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
   NavigationMenu,
@@ -20,6 +20,20 @@ const DesktopHeader = () => {
       return <Film className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-blue-400 group-hover:from-purple-300 group-hover:to-blue-300 transition-colors" />;
     }
     return <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-blue-400 group-hover:from-purple-300 group-hover:to-blue-300 transition-colors"></div>;
+  };
+
+  const getLinkIcon = (linkName: string) => {
+    if (linkName.includes('Theater Set Design')) return <Theater className="w-3 h-3" />;
+    if (linkName.includes('Costume Design')) return <Palette className="w-3 h-3" />;
+    if (linkName.includes('Choreography')) return <Music className="w-3 h-3" />;
+    if (linkName.includes('Stage Lighting')) return <Sparkles className="w-3 h-3" />;
+    if (linkName.includes('Playwriter')) return <Pen className="w-3 h-3" />;
+    if (linkName.includes('Movie Script')) return <FileText className="w-3 h-3" />;
+    if (linkName.includes('Movie Scene Maker')) return <Video className="w-3 h-3" />;
+    if (linkName.includes('Movie Maker AI Studio')) return <Clapperboard className="w-3 h-3" />;
+    if (linkName.includes('Music Video Maker')) return <Film className="w-3 h-3" />;
+    if (linkName.includes('More AI Tools')) return <Globe className="w-3 h-3" />;
+    return <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-400 to-purple-400"></div>;
   };
 
   return (
@@ -67,14 +81,7 @@ const DesktopHeader = () => {
                                 )}
                               >
                                 <span className="relative z-10 flex items-center gap-2">
-                                  <div className={cn(
-                                    "w-1.5 h-1.5 rounded-full transition-all duration-300 group-hover/item:scale-125",
-                                    link.name.includes("Playwriter") 
-                                      ? "bg-gradient-to-r from-yellow-400 to-orange-400" 
-                                      : link.name.includes("Movie Script") 
-                                        ? "bg-gradient-to-r from-green-400 to-emerald-400"
-                                        : "bg-gradient-to-r from-blue-400 to-purple-400"
-                                  )}></div>
+                                  {getLinkIcon(link.name)}
                                   {link.name}
                                   <div className="ml-auto opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
                                     <div className="w-1 h-1 rounded-full bg-white/60"></div>
