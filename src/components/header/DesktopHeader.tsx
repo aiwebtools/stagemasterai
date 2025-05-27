@@ -26,8 +26,8 @@ const DesktopHeader = () => {
               <Sparkles className="h-4 w-4 mr-2 text-purple-300 group-hover:text-purple-200 transition-colors" />
               AI Tools
             </NavigationMenuTrigger>
-            <NavigationMenuContent className="bg-gradient-to-br from-stage-dark/98 to-purple-900/95 backdrop-blur-xl border border-white/20 shadow-2xl rounded-xl overflow-hidden">
-              <div className="w-96 p-6">
+            <NavigationMenuContent className="bg-gradient-to-br from-stage-dark/98 to-purple-900/95 backdrop-blur-xl border border-white/20 shadow-2xl rounded-xl overflow-hidden right-0">
+              <div className="w-96 max-w-[calc(100vw-2rem)] p-6">
                 <div className="space-y-4">
                   {groupedLinks.map((group, groupIndex) => (
                     <Collapsible key={groupIndex} className="w-full">
