@@ -38,22 +38,8 @@ const HowItWorksSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {steps.map((step, index) => (
-            <div key={index} className="glass-card p-6 relative">
-              <div className="w-10 h-10 rounded-full bg-gold-gradient flex items-center justify-center mb-4">
-                <span className="text-stage-dark font-bold">{index + 1}</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-              <p className="text-white/70">{step.description}</p>
-            </div>
-          ))}
-        </div>
-        
-        <div className="max-w-4xl mx-auto">
-          <YouTubeEmbed videoId="KKldzg40wEI" title="StageMaster AI Suite Demo" />
-          
-          <div className="mt-6 flex flex-wrap justify-center gap-4">
+        <div className="max-w-4xl mx-auto mb-12">
+          <div className="mb-6 flex flex-wrap justify-center gap-4">
             <a 
               href="https://playwritergpt.lovable.app/"
               target="_blank" 
@@ -75,6 +61,20 @@ const HowItWorksSection = () => {
               </span>
             </a>
           </div>
+          
+          <YouTubeEmbed videoId="-QIxYSlcRWM" title="StageMaster AI Suite Demo" />
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((step, index) => (
+            <div key={index} className="glass-card p-6 relative">
+              <div className="w-10 h-10 rounded-full bg-gold-gradient flex items-center justify-center mb-4">
+                <span className="text-stage-dark font-bold">{index + 1}</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+              <p className="text-white/70">{step.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
