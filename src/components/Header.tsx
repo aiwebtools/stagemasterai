@@ -70,64 +70,88 @@ const Header = () => {
   return (
     <header 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3",
-        isScrolled ? "bg-stage-dark/80 frost-blur shadow-lg" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isScrolled ? "bg-stage-dark/80 frost-blur shadow-lg" : "bg-transparent",
+        isMobile ? "py-2" : "py-3"
       )}
     >
-      <div className="container flex items-center justify-between px-4 mx-auto">
-        <a href="/" className="flex items-center gap-2 z-50 animate-pulse-glow">
-          <div className="relative h-10 w-10 rounded-full bg-gold-gradient flex items-center justify-center animate-rotate-slow shadow-[0_0_15px_rgba(255,215,0,0.7)]">
-            <span className="text-stage-dark text-xl font-bold">🎭</span>
-            <div className="absolute -inset-1 rounded-full bg-gold-gradient opacity-30 blur-sm"></div>
-            <div className="absolute -inset-2 rounded-full bg-gold-gradient opacity-20 blur-md"></div>
-          </div>
-          <div>
-            <h1 className="text-lg font-heading font-bold text-gold-gradient">
-              StageMaster AI Suite
-            </h1>
-            <div className="text-xs text-white/70">
-              Presented by <span className="hover:text-white">AiWebTools.Ai</span>
+      <div className="container mx-auto px-4">
+        {/* Mobile Layout - Stacked */}
+        <div className="md:hidden flex flex-col items-center space-y-3">
+          {/* Logo - Centered */}
+          <a href="/" className="flex items-center gap-2 animate-pulse-glow">
+            <div className="relative h-10 w-10 rounded-full bg-gold-gradient flex items-center justify-center animate-rotate-slow shadow-[0_0_15px_rgba(255,215,0,0.7)]">
+              <span className="text-stage-dark text-xl font-bold">🎭</span>
+              <div className="absolute -inset-1 rounded-full bg-gold-gradient opacity-30 blur-sm"></div>
+              <div className="absolute -inset-2 rounded-full bg-gold-gradient opacity-20 blur-md"></div>
             </div>
-          </div>
-        </a>
+            <div>
+              <h1 className="text-lg font-heading font-bold text-gold-gradient">
+                StageMaster AI Suite
+              </h1>
+              <div className="text-xs text-white/70">
+                Presented by <span className="hover:text-white">AiWebTools.Ai</span>
+              </div>
+            </div>
+          </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          {navigationLinks.map((link, index) => (
-            <a
-              key={index}
-              href={link.href}
-              className="text-sm text-white/70 hover:text-white transition-colors relative group"
-            >
-              {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-stage-gold transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
-        </nav>
+          {/* Hamburger Menu Button - Centered */}
+          <button 
+            className="p-2 text-white/80 hover:text-white transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
-        {/* Mobile Menu Toggle Button */}
-        <button 
-          className="md:hidden p-2 text-white/80 hover:text-white z-50"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Desktop Layout - Horizontal */}
+        <div className="hidden md:flex items-center justify-between">
+          <a href="/" className="flex items-center gap-2 z-50 animate-pulse-glow">
+            <div className="relative h-10 w-10 rounded-full bg-gold-gradient flex items-center justify-center animate-rotate-slow shadow-[0_0_15px_rgba(255,215,0,0.7)]">
+              <span className="text-stage-dark text-xl font-bold">🎭</span>
+              <div className="absolute -inset-1 rounded-full bg-gold-gradient opacity-30 blur-sm"></div>
+              <div className="absolute -inset-2 rounded-full bg-gold-gradient opacity-20 blur-md"></div>
+            </div>
+            <div>
+              <h1 className="text-lg font-heading font-bold text-gold-gradient">
+                StageMaster AI Suite
+              </h1>
+              <div className="text-xs text-white/70">
+                Presented by <span className="hover:text-white">AiWebTools.Ai</span>
+              </div>
+            </div>
+          </a>
+
+          {/* Desktop Navigation */}
+          <nav className="flex items-center gap-6">
+            {navigationLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                className="text-sm text-white/70 hover:text-white transition-colors relative group"
+              >
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-stage-gold transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            ))}
+          </nav>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}
       <div 
         className={cn(
-          "fixed inset-0 z-40 pt-20 transform transition-transform duration-300 ease-in-out md:hidden",
+          "fixed inset-0 z-40 transform transition-transform duration-300 ease-in-out md:hidden",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
-        style={{ left: isMobileMenuOpen ? '24px' : undefined }}
+        style={{ top: isMobileMenuOpen ? '100px' : undefined }}
       >
         {/* Backdrop */}
         <div className="absolute inset-0 bg-gradient-to-br from-stage-dark/95 via-purple-900/20 to-stage-dark/95 backdrop-blur-xl" />
         
         {/* Menu Content */}
-        <div className="relative h-full overflow-y-auto bg-gradient-to-b from-stage-dark/90 to-[#0A0A12]/95 border-l border-white/10 shadow-2xl">
+        <div className="relative h-full overflow-y-auto bg-gradient-to-b from-stage-dark/90 to-[#0A0A12]/95 shadow-2xl">
           <div className="p-6">
             {/* Header */}
             <div className="mb-6 pb-4 border-b border-white/10">
