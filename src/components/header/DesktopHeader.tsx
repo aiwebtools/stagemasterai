@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ChevronDown, Sparkles } from 'lucide-react';
+import { ChevronDown, Sparkles, Film } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
   NavigationMenu,
@@ -15,6 +15,13 @@ import Logo from './Logo';
 import { groupedLinks } from './navigationData';
 
 const DesktopHeader = () => {
+  const getCategoryIcon = (category: string) => {
+    if (category === 'Movie & Commercial Creation') {
+      return <Film className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-blue-400 group-hover:from-purple-300 group-hover:to-blue-300 transition-colors" />;
+    }
+    return <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-blue-400 group-hover:from-purple-300 group-hover:to-blue-300 transition-colors"></div>;
+  };
+
   return (
     <div className="hidden md:flex items-center justify-between w-full">
       <Logo />
@@ -33,7 +40,7 @@ const DesktopHeader = () => {
                     <Collapsible key={groupIndex} className="w-full">
                       <CollapsibleTrigger className="flex w-full items-center justify-between rounded-xl bg-gradient-to-r from-white/8 to-white/4 hover:from-white/15 hover:to-white/8 px-4 py-3 text-sm font-semibold text-white hover:text-purple-200 transition-all duration-300 border border-white/5 hover:border-white/20 shadow-sm hover:shadow-lg group backdrop-blur-sm">
                         <span className="flex items-center gap-2">
-                          <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-blue-400 group-hover:from-purple-300 group-hover:to-blue-300 transition-colors"></div>
+                          {getCategoryIcon(group.category)}
                           {group.category}
                         </span>
                         <ChevronDown className="h-4 w-4 text-white/60 group-hover:text-white/80 transition-all duration-300 group-data-[state=open]:rotate-180" />

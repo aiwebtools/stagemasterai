@@ -22,7 +22,7 @@ export const groupedLinks = [
     links: [navigationLinks[4], navigationLinks[5]], // Include Playwriter GPT here too
   },
   {
-    category: 'Visual Creation',
+    category: 'Movie & Commercial Creation',
     links: [
       navigationLinks[6], // Movie Scene Maker GPT
       navigationLinks[7], // Movie Maker AI Studio
