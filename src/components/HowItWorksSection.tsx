@@ -24,9 +24,9 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 bg-black/30">
+    <section id="how-it-works" className="py-10 md:py-20 bg-black/30">
       <div className="container px-4 mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12">
           <span className="px-3 py-1 text-xs font-medium rounded-full bg-white/10 text-white backdrop-blur-sm mb-4 inline-block">
             Intuitive Process
           </span>
@@ -38,7 +38,7 @@ const HowItWorksSection = () => {
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto mb-12">
+        <div className="max-w-4xl mx-auto mb-8 md:mb-12">
           <YouTubeEmbed videoId="-QIxYSlcRWM" title="StageMaster AI Suite Demo" />
           
           <div className="mt-6 flex flex-wrap justify-center gap-4">
