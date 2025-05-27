@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { ChevronDown, AlertTriangle, ExternalLink } from 'lucide-react';
+import { ChevronDown, AlertTriangle, ExternalLink, X } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { groupedLinks } from './navigationData';
 
@@ -34,12 +34,23 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
       >
         <div className="h-full overflow-y-auto bg-gradient-to-b from-stage-dark/95 via-stage-dark/98 to-black/95 backdrop-blur-2xl border-l border-white/10 shadow-2xl">
           <div className="p-6">
-            {/* Enhanced Header */}
+            {/* Enhanced Header with Close Button */}
             <div className="mb-6 pb-4 border-b border-gradient-to-r from-transparent via-white/20 to-transparent">
-              <h2 className="text-xl font-heading font-bold text-gradient bg-gradient-to-r from-white via-gold-400 to-white bg-clip-text">
-                Navigation
-              </h2>
-              <p className="text-sm text-white/70 mt-1">Explore our AI creative tools</p>
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-xl font-heading font-bold text-gradient bg-gradient-to-r from-white via-gold-400 to-white bg-clip-text">
+                    Navigation
+                  </h2>
+                  <p className="text-sm text-white/70 mt-1">Explore our AI creative tools</p>
+                </div>
+                <button
+                  onClick={onClose}
+                  className="p-2 text-white/60 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
+                  aria-label="Close menu"
+                >
+                  <X size={20} />
+                </button>
+              </div>
             </div>
 
             {/* Enhanced Accordion Navigation */}
