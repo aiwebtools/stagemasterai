@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { ChevronDown, Sparkles, Film, Theater, Palette, Music, Pen, FileText, Video, Clapperboard, Globe } from 'lucide-react';
+import { ChevronDown, Sparkles, Film, Theater, Palette, Music, Pen, FileText, Video, Clapperboard, Globe, AlertTriangle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
   NavigationMenu,
@@ -95,6 +94,20 @@ const DesktopHeader = () => {
                     </Collapsible>
                   ))}
                   
+                  {/* Read Disclaimer Button */}
+                  <NavigationMenuLink asChild>
+                    <a 
+                      href="#disclaimer"
+                      className="flex items-center justify-between w-full rounded-xl bg-gradient-to-r from-red-600/20 to-orange-600/20 hover:from-red-600/30 hover:to-orange-600/30 px-4 py-3 text-sm font-semibold text-white hover:text-red-100 transition-all duration-300 border border-red-400/30 hover:border-red-300/50 shadow-lg hover:shadow-xl group backdrop-blur-sm relative overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 to-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative z-10 flex items-center gap-2">
+                        <AlertTriangle className="h-4 w-4 text-red-300 group-hover:text-red-200 transition-colors" />
+                        Read Disclaimer
+                      </span>
+                    </a>
+                  </NavigationMenuLink>
+
                   {/* More AI Tools as separate link */}
                   <NavigationMenuLink asChild>
                     <a 

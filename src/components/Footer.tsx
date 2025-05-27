@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ExternalLink, Phone, Mail } from 'lucide-react';
+import { ExternalLink, Phone, Mail, AlertTriangle } from 'lucide-react';
 
 const Footer = () => {
   const navigationLinks = [
@@ -18,7 +18,7 @@ const Footer = () => {
 
   const resourceLinks = [
     { name: 'FAQ', href: '#faq' },
-    { name: 'Disclaimer', href: '#disclaimer' },
+    { name: 'Read Disclaimer', href: '#disclaimer', icon: AlertTriangle },
   ];
 
   return (
@@ -99,8 +99,12 @@ const Footer = () => {
                   <li key={index}>
                     <a 
                       href={link.href} 
-                      className="text-white/60 hover:text-white transition-colors text-sm"
+                      className={cn(
+                        "text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1 group",
+                        link.name === 'Read Disclaimer' && "text-red-300 hover:text-red-200"
+                      )}
                     >
+                      {link.icon && <link.icon size={14} className="text-red-400" />}
                       {link.name}
                     </a>
                   </li>

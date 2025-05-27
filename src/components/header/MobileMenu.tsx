@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, AlertTriangle } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { groupedLinks } from './navigationData';
 
@@ -70,6 +69,20 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 </AccordionContent>
               </AccordionItem>
             ))}
+            
+            {/* Read Disclaimer Button */}
+            <div className="border border-white/10 rounded-lg bg-white/5 backdrop-blur-sm overflow-hidden">
+              <a 
+                href="#disclaimer"
+                className="flex items-center justify-between w-full px-3 py-3 text-sm font-medium text-red-300 hover:text-red-200 transition-colors hover:bg-red-500/10 border border-red-400/20 hover:border-red-300/40"
+                onClick={onClose}
+              >
+                <span className="flex items-center gap-2">
+                  <AlertTriangle className="h-4 w-4" />
+                  Read Disclaimer
+                </span>
+              </a>
+            </div>
             
             {/* More AI Tools as separate button */}
             <div className="border border-white/10 rounded-lg bg-white/5 backdrop-blur-sm overflow-hidden">
