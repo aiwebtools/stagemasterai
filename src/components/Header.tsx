@@ -122,9 +122,9 @@ const Header = () => {
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <div className="p-6 overflow-y-auto max-h-[calc(100vh-5rem)] bg-[#0A0A12]">
+        <div className="p-4 overflow-y-auto h-full w-full max-w-full bg-[#0A0A12]">
           {/* Accordion Navigation for Mobile */}
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible className="w-full max-w-full">
             {groupedLinks.map((group, groupIndex) => (
               <AccordionItem key={groupIndex} value={`item-${groupIndex}`} className="border-b border-white/10">
                 {group.href ? (
@@ -148,7 +148,7 @@ const Header = () => {
                           key={linkIndex}
                           href={link.href}
                           className={cn(
-                            "py-3 px-4 rounded-md transition-all",
+                            "py-3 px-4 rounded-md transition-all break-words text-sm",
                             link.name.includes("Playwriter") 
                               ? "bg-gold-gradient text-stage-dark font-medium hover:shadow-lg hover:shadow-gold/30 shimmer" 
                               : link.name.includes("Movie Script") 
