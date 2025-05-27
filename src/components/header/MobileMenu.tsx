@@ -124,7 +124,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                   className="group flex items-center justify-between w-full px-4 py-4 text-sm font-semibold text-white hover:text-gold-400 transition-all duration-300 hover:bg-white/10 relative overflow-hidden"
                   onClick={onClose}
                 >
-                  <span className="relative z-10">More AI Tools</span>
+                  <span className="relative z-10">MORE AI WEB TOOLS</span>
                   <div className="flex items-center gap-2 relative z-10">
                     <ExternalLink className="h-4 w-4 text-white/60 group-hover:text-gold-400 transition-colors duration-300" />
                     <ChevronDown className="h-4 w-4 text-white/60 group-hover:text-gold-400 transition-colors duration-300 rotate-[-90deg]" />
