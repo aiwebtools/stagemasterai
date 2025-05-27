@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
@@ -59,11 +58,6 @@ const Header = () => {
         navigationLinks[7], // Movie Maker AI Studio
         navigationLinks[8], // Music Video Maker GPT
       ],
-    },
-    {
-      category: 'More AI Tools',
-      links: [], // Empty array since we'll use the category as a direct link
-      href: 'https://www.aiwebtools.ai'
     }
   ];
 
@@ -145,7 +139,7 @@ const Header = () => {
           "fixed inset-0 z-40 transform transition-transform duration-300 ease-in-out md:hidden",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
-        style={{ top: isMobileMenuOpen ? '100px' : undefined }}
+        style={{ top: isMobileMenuOpen ? '100px' : undefined, left: '-1in' }}
       >
         {/* Backdrop */}
         <div className="absolute inset-0 bg-gradient-to-br from-stage-dark/95 via-purple-900/20 to-stage-dark/95 backdrop-blur-xl" />
@@ -167,45 +161,44 @@ const Header = () => {
                   value={`item-${groupIndex}`} 
                   className="border border-white/10 rounded-lg bg-white/5 backdrop-blur-sm overflow-hidden"
                 >
-                  {group.href ? (
-                    <a 
-                      href={group.href}
-                      className="flex items-center justify-between w-full p-4 text-base font-medium text-white hover:text-gold-gradient transition-colors hover:bg-white/10"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      <span>{group.category}</span>
-                      <ChevronDown className="h-4 w-4 text-white/60" />
-                    </a>
-                  ) : (
-                    <AccordionTrigger className="p-4 text-base font-medium text-white hover:text-gold-gradient hover:no-underline data-[state=open]:text-gold-gradient">
-                      {group.category}
-                    </AccordionTrigger>
-                  )}
-                  {!group.href && (
-                    <AccordionContent className="p-0">
-                      <div className="bg-black/20 border-t border-white/10">
-                        {group.links.map((link, linkIndex) => (
-                          <a
-                            key={linkIndex}
-                            href={link.href}
-                            className={cn(
-                              "block p-4 transition-all border-b border-white/5 last:border-b-0",
-                              link.name.includes("Playwriter") 
-                                ? "bg-gradient-to-r from-yellow-500/10 to-orange-500/10 text-yellow-300 hover:from-yellow-500/20 hover:to-orange-500/20 font-medium" 
-                                : link.name.includes("Movie Script") 
-                                  ? "bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-300 hover:from-green-500/20 hover:to-emerald-500/20 font-medium"
-                                  : "text-white/80 hover:text-white hover:bg-white/10"
-                            )}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            <div className="text-sm font-medium">{link.name}</div>
-                          </a>
-                        ))}
-                      </div>
-                    </AccordionContent>
-                  )}
+                  <AccordionTrigger className="p-4 text-base font-medium text-white hover:text-gold-gradient hover:no-underline data-[state=open]:text-gold-gradient">
+                    {group.category}
+                  </AccordionTrigger>
+                  <AccordionContent className="p-0">
+                    <div className="bg-black/20 border-t border-white/10">
+                      {group.links.map((link, linkIndex) => (
+                        <a
+                          key={linkIndex}
+                          href={link.href}
+                          className={cn(
+                            "block p-4 transition-all border-b border-white/5 last:border-b-0",
+                            link.name.includes("Playwriter") 
+                              ? "bg-gradient-to-r from-yellow-500/10 to-orange-500/10 text-yellow-300 hover:from-yellow-500/20 hover:to-orange-500/20 font-medium" 
+                              : link.name.includes("Movie Script") 
+                                ? "bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-300 hover:from-green-500/20 hover:to-emerald-500/20 font-medium"
+                                : "text-white/80 hover:text-white hover:bg-white/10"
+                          )}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          <div className="text-sm font-medium">{link.name}</div>
+                        </a>
+                      ))}
+                    </div>
+                  </AccordionContent>
                 </AccordionItem>
               ))}
+              
+              {/* More AI Tools as separate button */}
+              <div className="border border-white/10 rounded-lg bg-white/5 backdrop-blur-sm overflow-hidden">
+                <a 
+                  href="https://www.aiwebtools.ai"
+                  className="flex items-center justify-between w-full p-4 text-base font-medium text-white hover:text-gold-gradient transition-colors hover:bg-white/10"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <span>More AI Tools</span>
+                  <ChevronDown className="h-4 w-4 text-white/60" />
+                </a>
+              </div>
             </Accordion>
 
             {/* Footer */}
