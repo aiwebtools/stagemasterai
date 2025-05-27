@@ -136,13 +136,28 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               </div>
             </Accordion>
 
-            {/* Enhanced Footer */}
-            <div className="mt-8 pt-6 border-t border-gradient-to-r from-transparent via-white/20 to-transparent text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
-                <div className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />
-                <p className="text-xs text-white/60 font-medium">
-                  Powered by AI • Created with ❤️
-                </p>
+            {/* Enhanced Footer with Close Button */}
+            <div className="mt-8 pt-6 border-t border-gradient-to-r from-transparent via-white/20 to-transparent">
+              {/* Footer Info */}
+              <div className="text-center mb-4">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+                  <div className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />
+                  <p className="text-xs text-white/60 font-medium">
+                    Powered by AI • Created with ❤️
+                  </p>
+                </div>
+              </div>
+              
+              {/* Bottom Close Button */}
+              <div className="flex justify-center">
+                <button
+                  onClick={onClose}
+                  className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white/80 hover:text-white rounded-xl transition-all duration-300 border border-white/20 hover:border-white/30"
+                  aria-label="Close navigation menu"
+                >
+                  <X size={18} />
+                  <span className="text-sm font-medium">Close Menu</span>
+                </button>
               </div>
             </div>
           </div>
