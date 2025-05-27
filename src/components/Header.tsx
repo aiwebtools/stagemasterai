@@ -121,6 +121,7 @@ const Header = () => {
           "fixed inset-0 z-40 bg-stage-dark/95 pt-20 transform transition-transform duration-300 ease-in-out md:hidden backdrop-blur-xl shadow-2xl border-t border-white/10",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
+        style={{ left: isMobileMenuOpen ? '24px' : undefined }}
       >
         <div className="p-4 overflow-y-auto h-full w-full max-w-full bg-[#0A0A12]">
           {/* Accordion Navigation for Mobile */}
