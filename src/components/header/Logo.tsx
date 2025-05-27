@@ -16,6 +16,9 @@ const Logo = () => {
         <div className="text-xs text-white/70">
           Presented by <span className="hover:text-white">AiWebTools.Ai</span>
         </div>
+        <div className="text-xs text-white/60 italic">
+          "Your Launch Pad to the Tools That Power Your Story."
+        </div>
       </div>
     </a>
   );
