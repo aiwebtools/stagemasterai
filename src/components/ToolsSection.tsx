@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ToolCard from '@/components/ToolCard';
 import { Palette, Music, Theater, LampDesk, PenTool, Film, Video, Clapperboard, Music as MusicIcon } from 'lucide-react';
@@ -168,7 +167,7 @@ const ToolsSection = () => {
             Specialized AI Tools for Every Creative Need
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            A comprehensive suite of AI tools for the entire creative process - from scriptwriting and set design to costumes, choreography, lighting, & more!
+            A comprehensive suite of AI tools for the entire creative process - from scriptwriting and set design to costumes, choreography, and lighting, & more!
           </p>
         </div>
         
