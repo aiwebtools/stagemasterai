@@ -17,7 +17,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
         "fixed inset-0 z-40 transform transition-transform duration-300 ease-in-out md:hidden",
         isOpen ? "translate-x-0" : "translate-x-full"
       )}
-      style={{ top: '80px' }}
+      style={{ top: '60px' }}
     >
       {/* Backdrop */}
       <div 
