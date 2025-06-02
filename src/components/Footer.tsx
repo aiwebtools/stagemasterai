@@ -123,7 +123,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a 
-                    href="https://aiwebtools.ai/terms-of-services" 
+                    href="https://aiwebtools.lovable.app/disclaimers" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1 group"
@@ -135,6 +135,14 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+        </div>
+
+        {/* Small Disclaimer Notice */}
+        <div className="mb-6 p-3 bg-white/5 border border-white/10 rounded-lg">
+          <p className="text-white/60 text-xs text-center">
+            <strong>Disclaimer:</strong> All AI tools and content are provided for informational, educational, and research purposes only. 
+            Users are responsible for ensuring compliance with all applicable laws, safety standards, and professional requirements.
+          </p>
         </div>
 
         {/* Bottom Section */}
