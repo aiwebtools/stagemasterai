@@ -10,13 +10,13 @@ interface MobileHeaderProps {
 
 const MobileHeader = ({ isMobileMenuOpen, onToggleMenu }: MobileHeaderProps) => {
   return (
-    <div className="md:hidden flex flex-col items-center space-y-3">
-      {/* Logo - Centered */}
+    <div className="md:hidden flex items-center justify-between w-full">
+      {/* Logo */}
       <Logo />
 
-      {/* Hamburger Menu Button - Centered */}
+      {/* Hamburger Menu Button */}
       <button 
-        className="p-2 text-white/80 hover:text-white transition-colors"
+        className="p-2 text-white/80 hover:text-white transition-colors flex-shrink-0"
         onClick={onToggleMenu}
         aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
       >
