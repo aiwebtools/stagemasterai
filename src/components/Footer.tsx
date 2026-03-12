@@ -37,7 +37,7 @@ const Footer = () => {
                   StageMaster AI Suite
                 </h1>
                 <div className="text-xs text-white/70">
-                  By <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="hover:text-white">AiWebTools.Ai</a>
+                  By <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer" className="hover:text-white">AiWebTools.Ai</a>
                 </div>
               </div>
             </a>
