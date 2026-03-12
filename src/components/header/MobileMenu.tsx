@@ -108,7 +108,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               {/* More AI Tools Button */}
               <div className="border border-white/20 rounded-lg bg-gradient-to-r from-purple-500/10 to-blue-500/10 overflow-hidden">
                 <a 
-                  href="https://www.aiwebtools.ai"
+                  href="https://aiwebtools.lovable.app/?via=aiwebtools"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between w-full px-3 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-all"
