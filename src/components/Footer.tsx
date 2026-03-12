@@ -148,7 +148,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between">
           <p className="text-white/60 text-sm mb-4 md:mb-0">
-            © 2025 <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="hover:text-white">AI WEB TOOLS LLC</a>. All rights reserved.
+            © 2025 <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer" className="hover:text-white">AI WEB TOOLS LLC</a>. All rights reserved.
           </p>
           <a 
             href="https://www.aiwebtools.ai"
