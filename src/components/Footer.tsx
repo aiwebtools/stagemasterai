@@ -151,7 +151,7 @@ const Footer = () => {
             © 2025 <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer" className="hover:text-white">AI WEB TOOLS LLC</a>. All rights reserved.
           </p>
           <a 
-            href="https://www.aiwebtools.ai"
+            href="https://aiwebtools.lovable.app/?via=aiwebtools"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full py-2 px-6 bg-white/10 hover:bg-white/20 transition-colors text-white text-sm flex items-center gap-2 hover:shadow-lg hover:shadow-white/5"

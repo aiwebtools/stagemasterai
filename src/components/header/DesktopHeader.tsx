@@ -111,7 +111,7 @@ const DesktopHeader = () => {
                   {/* More AI Tools as separate link */}
                   <NavigationMenuLink asChild>
                     <a 
-                      href="https://www.aiwebtools.ai"
+                      href="https://aiwebtools.lovable.app/?via=aiwebtools"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-between w-full rounded-xl bg-gradient-to-r from-purple-600/30 to-blue-600/30 hover:from-purple-600/40 hover:to-blue-600/40 px-4 py-3 text-sm font-semibold text-white hover:text-purple-100 transition-all duration-300 border border-purple-400/30 hover:border-purple-300/50 shadow-lg hover:shadow-xl group backdrop-blur-sm relative overflow-hidden"

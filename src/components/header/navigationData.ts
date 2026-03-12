@@ -9,7 +9,7 @@ export const navigationLinks = [
   { name: 'Movie Scene Maker GPT', href: 'https://moviescenemakergpt.lovable.app/?via=aiwebtools' },
   { name: 'Movie Maker AI Studio', href: 'https://moviemakerstudio.lovable.app/?via=aiwebtools' },
   { name: 'Music Video Maker GPT', href: 'https://musicvideomakergpt.lovable.app/?via=aiwebtools' },
-  { name: 'More AI Tools', href: 'https://www.aiwebtools.ai' },
+  { name: 'More AI Tools', href: 'https://aiwebtools.lovable.app/?via=aiwebtools' },
 ];
 
 export const groupedLinks = [
